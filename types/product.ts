@@ -3,7 +3,12 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
+features?: string[];
 
+faqs?: {
+  question: string;
+  answer: string;
+}[]; 
   categoryId: string;
   brandId: string;
 

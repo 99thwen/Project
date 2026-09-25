@@ -3,68 +3,102 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
-import { useCart } from "@/components/cart/CartContext";
 
+import { brands } from "@/data/brands";
+import { categories } from "@/data/categories";
 import type { Product } from "@/types/product";
+import { useCart } from "@/components/cart/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
-export default function ProductCard({
-  product,
-}: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
+
+  const brand = brands.find(
+    (item) => item.id === product.brandId
+  );
+
+  const category = categories.find(
+    (item) => item.id === product.categoryId
+  );
 
   function handleAddToCart() {
     addToCart(product);
   }
+
   return (
-    <article className="card-hover overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white shadow-[var(--shadow-sm)]">
-      <Link href={`/product/${product.slug}`} className="group block">
-        <div className="relative aspect-square overflow-hidden bg-[var(--background-soft)]">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-contain p-5 transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
+    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-white transition-all duration-200 hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]">
 
-        <div className="p-4">
-          <p className="mb-1 text-xs font-medium uppercase tracking-wide text-[var(--primary)]">
-            {product.brandId}
-          </p>
+      {/* Product Image */}
+      <Link
+        href={`/product/${product.slug}`}
+        className="relative block aspect-square overflow-hidden bg-[var(--background-soft)]"
+      >
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+        />
 
-          <h3 className="line-clamp-2 min-h-10 text-sm font-semibold text-[var(--dark)]">
-            {product.name}
-          </h3>
-
-          {product.model && (
-            <p className="mt-2 text-xs text-[var(--text-muted)]">
-              Model: {product.model}
-            </p>
-          )}
-
-          <p className="mt-3 text-lg font-bold text-[var(--navy)]">
-            Rs. {product.price.toLocaleString("en-PK")}
-            {product.priceMax && (
-              <> – Rs. {product.priceMax.toLocaleString("en-PK")}</>
-            )}
-          </p>
-        </div>
+        {/* Brand Badge */}
+        {brand && (
+          <span className="absolute left-3 top-3 rounded-md bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--navy)] shadow-sm">
+            {brand.name}
+          </span>
+        )}
       </Link>
 
-      <div className="px-4 pb-4">
-        <button
-        type="button"
-        onClick={handleAddToCart}
-          className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-white hover:bg-[var(--primary-hover)]"
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-4">
+
+        {/* Category */}
+        {category && (
+          <p className="mb-1 text-[11px] font-medium uppercase tracking-wide text-[var(--text-light)]">
+            {category.name}
+          </p>
+        )}
+
+        {/* Product Name */}
+        <Link
+          href={`/product/${product.slug}`}
+          className="line-clamp-2 min-h-[44px] text-[15px] font-semibold leading-5 text-[var(--navy)] transition-colors hover:text-[var(--primary)]"
         >
-          <ShoppingCart className="h-4 w-4" />
-          Add to Cart
-        </button>
+          {product.name}
+        </Link>
+
+        {/* Model */}
+        {product.model && (
+          <p className="mt-1 truncate text-xs text-[var(--text-light)]">
+            Model: {product.model}
+          </p>
+        )}
+
+        {/* Bottom */}
+        <div className="mt-auto pt-4">
+
+          {/* Price */}
+          <div className="mb-3">
+            <p className="text-lg font-semibold text-[var(--navy)]">
+              Rs. {product.price.toLocaleString("en-PK")}
+            </p>
+          </div>
+
+          {/* View Product */}
+          <Link
+            href={`/product/${product.slug}`}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold !text-white shadow-sm transition-all hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-[0.98]"
+          >
+            <ShoppingCart className="h-4 w-4 !text-white" />
+            <span className="!text-white">
+              View Product
+            </span>
+          </Link>
+
+        </div>
       </div>
     </article>
   );

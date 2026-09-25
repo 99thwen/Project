@@ -37,6 +37,11 @@ export const brands: Brand[] = [
     slug: "super-asia",
   },
   {
+  id: "nasgas",
+  name: "NasGas",
+  slug: "nasgas",
+},
+  {
     id: "ng",
     name: "NG",
     slug: "ng",

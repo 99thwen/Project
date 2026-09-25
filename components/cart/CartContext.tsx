@@ -4,8 +4,10 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 import type { Product } from "@/types/product";
 
@@ -22,6 +24,7 @@ interface CartContextType {
   clearCart: () => void;
   itemCount: number;
   subtotal: number;
+  cartMessage: string | null;
 }
 
 const CartContext = createContext<CartContextType | undefined>(
@@ -33,19 +36,50 @@ export function CartProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const router = useRouter();
+  const pathname = usePathname();
 
+  const [items, setItems] = useState<CartItem[]>([]);
+  const [cartMessage, setCartMessage] = useState<string | null>(
+    null,
+  );
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  const messageTimerRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
+
+  // Load saved cart once when the app starts.
   useEffect(() => {
     const savedCart = localStorage.getItem("jaji-cart");
 
     if (savedCart) {
-      setItems(JSON.parse(savedCart));
+      try {
+        setItems(JSON.parse(savedCart));
+      } catch {
+        localStorage.removeItem("jaji-cart");
+      }
     }
+
+    setIsHydrated(true);
   }, []);
 
+  // Save cart only after the saved cart has been loaded.
   useEffect(() => {
+    if (!isHydrated) {
+      return;
+    }
+
     localStorage.setItem("jaji-cart", JSON.stringify(items));
-  }, [items]);
+  }, [items, isHydrated]);
+
+  useEffect(() => {
+    return () => {
+      if (messageTimerRef.current) {
+        clearTimeout(messageTimerRef.current);
+      }
+    };
+  }, []);
 
   function addToCart(product: Product) {
     setItems((currentItems) => {
@@ -72,6 +106,21 @@ export function CartProvider({
         },
       ];
     });
+
+    setCartMessage(`${product.name} added to cart`);
+
+    if (messageTimerRef.current) {
+      clearTimeout(messageTimerRef.current);
+    }
+
+    messageTimerRef.current = setTimeout(() => {
+      setCartMessage(null);
+    }, 2500);
+
+    // Open cart after adding.
+    if (pathname !== "/cart") {
+      router.push("/cart");
+    }
   }
 
   function removeFromCart(productId: string) {
@@ -125,6 +174,7 @@ export function CartProvider({
         clearCart,
         itemCount,
         subtotal,
+        cartMessage,
       }}
     >
       {children}

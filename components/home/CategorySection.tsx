@@ -4,6 +4,21 @@ import Link from "next/link";
 import { categories } from "@/data/categories";
 
 export default function CategorySection() {
+  const homeCategorySlugs = [
+  "split-ac",
+  "washing-machine",
+  "microwave",
+  "refrigerator",
+  "deep-freezer",
+  "dispenser",
+  "air-cooler",
+  
+];
+
+  const homeCategories = homeCategorySlugs
+    .map((slug) => categories.find((category) => category.slug === slug))
+    .filter((category): category is (typeof categories)[number] => Boolean(category));
+
   return (
     <section className="section-padding bg-white">
       <div className="container-main">
@@ -27,7 +42,7 @@ export default function CategorySection() {
 
         {/* Category Grid */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {categories.map((category) => (
+          {homeCategories.map((category) => (
             <Link
               key={category.id}
               href={`/category/${category.slug}`}

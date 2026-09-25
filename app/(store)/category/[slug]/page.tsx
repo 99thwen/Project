@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
-import ProductGrid from "@/components/products/ProductGrid";
+import CategoryCatalog from "@/components/products/CategoryCatalog";
 import StoreLayout from "@/components/layout/StoreLayout";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
@@ -30,29 +32,52 @@ export default async function CategoryPage({
 
   return (
     <StoreLayout>
-      <section className="section-padding bg-[var(--background-soft)]">
+      <section className="bg-[var(--background-soft)] py-10 sm:py-12 lg:py-14">
         <div className="container-main">
-          <div className="section-header">
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-8 flex items-center gap-2 text-xs text-[var(--text-muted)]"
+          >
+            <Link
+              href="/"
+              className="hover:text-[var(--primary)]"
+            >
+              Home
+            </Link>
+
+            <ChevronRight className="h-3.5 w-3.5" />
+
+            <span className="font-medium text-[var(--dark)]">
+              {category.name}
+            </span>
+          </nav>
+
+          {/* Category heading */}
+          <div className="mb-8">
             <p className="section-label">Category</p>
 
-            <h1 className="section-title">
-              {category.name}
-            </h1>
+            <div className="mt-1 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h1 className="section-title">
+                  {category.name}
+                </h1>
 
-            <p className="section-description">
-              Browse our {category.name.toLowerCase()} collection.
-            </p>
-          </div>
+                <p className="section-description">
+                  Browse our {category.name.toLowerCase()} collection.
+                </p>
+              </div>
 
-          {categoryProducts.length > 0 ? (
-            <ProductGrid products={categoryProducts} />
-          ) : (
-            <div className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-white p-10 text-center">
               <p className="text-sm text-[var(--text-muted)]">
-                No products are available in this category yet.
+                {categoryProducts.length}{" "}
+                {categoryProducts.length === 1
+                  ? "product"
+                  : "products"}
               </p>
             </div>
-          )}
+          </div>
+
+          <CategoryCatalog products={categoryProducts} />
         </div>
       </section>
     </StoreLayout>

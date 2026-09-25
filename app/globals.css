@@ -3,35 +3,39 @@
 /* =========================================================
    DESIGN TOKENS
    ========================================================= */
-
 :root {
   /* Brand */
-  --primary: #f58220;
-  --primary-hover: #e66f0d;
-  --primary-light: #fff3e8;
+  --primary: #1554A5;
+  --primary-hover: #0D4388;
+  --primary-light: #EAF3FF;
 
   /* Navy / Text */
-  --navy: #25256f;
-  --navy-dark: #1e1e5c;
+  --navy: #123B70;
+  --navy-dark: #0B2A52;
+
   --dark: #111827;
-  --dark-soft: #1f2937;
+  --dark-soft: #1F2937;
   --text: #374151;
-  --text-muted: #6b7280;
-  --text-light: #9ca3af;
+  --text-muted: #6B7280;
+  --text-light: #9CA3AF;
+
+  /* Accent */
+  --accent: #00A8C6;
+  --accent-light: #E6F9FC;
 
   /* Backgrounds */
-  --background: #ffffff;
-  --background-soft: #f8f9fc;
-  --background-muted: #f3f4f6;
+  --background: #FFFFFF;
+  --background-soft: #F7F9FC;
+  --background-muted: #F1F5F9;
 
   /* Borders */
-  --border: #e5e7eb;
-  --border-light: #eef0f4;
+  --border: #E2E8F0;
+  --border-light: #EDF1F5;
 
   /* Status */
-  --success: #16a34a;
-  --danger: #dc2626;
-  --warning: #f59e0b;
+  --success: #16A34A;
+  --danger: #DC2626;
+  --warning: #F59E0B;
 
   /* Layout */
   --container: 1280px;
@@ -47,7 +51,6 @@
   --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 12px 35px rgba(15, 23, 42, 0.12);
 }
-
 /* =========================================================
    RESET
    ========================================================= */
@@ -126,7 +129,6 @@ select {
 button {
   border: 0;
   padding: 0;
-  background: none;
   cursor: pointer;
 }
 
@@ -176,16 +178,16 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #CBD5E1;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #94A3B8;
 }
 
 /* =========================================================
