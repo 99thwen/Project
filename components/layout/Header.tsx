@@ -54,7 +54,7 @@ export default function Header() {
           MAIN HEADER
       ====================================================== */}
       <div className="border-b border-[var(--border-light)] bg-white">
-        <div className="container-main flex h-[64px] items-center gap-8">
+        <div className="container-main flex h-[64px] items-center gap-3 md:gap-8">
 
           {/* LOGO */}
           <Link
@@ -73,7 +73,7 @@ export default function Header() {
           </Link>
 
           {/* SEARCH */}
-          <div className="flex min-w-0 flex-1 justify-center">
+          <div className="hidden min-w-0 flex-1 justify-center md:flex">
             <form
               onSubmit={handleSearch}
               className="relative w-full max-w-[620px]"

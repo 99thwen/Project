@@ -25,23 +25,23 @@ export default function CartPage() {
     return (
       <StoreLayout>
         <main className="bg-[var(--background-soft)]">
-          <div className="container-main py-12 sm:py-16">
-            <div className="mx-auto max-w-2xl rounded-[var(--radius-xl)] border border-[var(--border)] bg-white px-6 py-16 text-center shadow-[var(--shadow-sm)]">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--primary-light)]">
-                <ShoppingBag className="h-7 w-7 text-[var(--primary)]" />
+          <div className="container-main py-10 sm:py-16">
+            <div className="mx-auto max-w-2xl rounded-[var(--radius-xl)] border border-[var(--border)] bg-white px-5 py-12 text-center shadow-[var(--shadow-sm)] sm:px-6 sm:py-16">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--primary-light)] sm:h-16 sm:w-16">
+                <ShoppingBag className="h-6 w-6 text-[var(--primary)] sm:h-7 sm:w-7" />
               </div>
 
-              <h1 className="mt-6 !text-2xl !font-bold text-[var(--dark)] sm:!text-3xl">
+              <h1 className="mt-5 !text-2xl !font-bold text-[var(--dark)] sm:mt-6 sm:!text-3xl">
                 Your cart is empty
               </h1>
 
-              <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[var(--text-muted)]">
+              <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[var(--text-muted)]">
                 You haven't added any products to your cart yet.
               </p>
 
               <Link
                 href="/"
-                className="mt-7 inline-flex h-11 items-center justify-center rounded-lg bg-[var(--primary)] px-6 text-sm font-bold text-white transition-colors hover:bg-[var(--primary-hover)]"
+                className="mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-[var(--primary)] px-6 text-sm font-bold !text-white transition-colors hover:bg-[var(--primary-hover)]"
               >
                 Continue Shopping
               </Link>
@@ -55,25 +55,28 @@ export default function CartPage() {
   return (
     <StoreLayout>
       <main className="bg-[var(--background-soft)]">
-        <div className="container-main py-10 sm:py-12">
+        <div className="container-main py-7 sm:py-12">
+
           {/* Header */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <p className="section-label">Shopping Cart</p>
 
-            <h1 className="!text-3xl !font-bold text-[var(--dark)] sm:!text-4xl">
+            <h1 className="!text-2xl !font-bold text-[var(--dark)] sm:!text-4xl">
               Your Cart
             </h1>
 
-            <p className="mt-2 text-sm text-[var(--text-muted)]">
+            <p className="mt-1.5 text-sm text-[var(--text-muted)] sm:mt-2">
               Review your items before proceeding to checkout.
             </p>
           </div>
 
-          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="grid items-start gap-4 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+
             {/* Cart items */}
-            <section className="overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-white shadow-[var(--shadow-sm)]">
-              <div className="border-b border-[var(--border-light)] px-5 py-4 sm:px-6">
-                <h2 className="text-base font-bold text-[var(--dark)]">
+            <section className="overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-[var(--shadow-sm)] sm:rounded-[var(--radius-xl)]">
+
+              <div className="border-b border-[var(--border-light)] px-4 py-3.5 sm:px-6 sm:py-4">
+                <h2 className="text-[15px] font-bold text-[var(--dark)] sm:text-base">
                   Cart Items
                 </h2>
               </div>
@@ -82,42 +85,45 @@ export default function CartPage() {
                 {items.map((item) => (
                   <article
                     key={item.product.id}
-                    className="p-5 sm:p-6"
+                    className="p-4 sm:p-6"
                   >
-                    <div className="flex gap-4 sm:gap-5">
+                    <div className="flex gap-3 sm:gap-5">
+
                       {/* Product image */}
                       <Link
                         href={`/product/${item.product.slug}`}
-                        className="relative h-28 w-28 shrink-0 overflow-hidden rounded-lg bg-[var(--background-soft)] sm:h-32 sm:w-32"
+                        className="relative h-[92px] w-[92px] shrink-0 overflow-hidden rounded-lg bg-[var(--background-soft)] sm:h-32 sm:w-32"
                       >
                         <Image
                           src={item.product.image}
                           alt={item.product.name}
                           fill
                           sizes="128px"
-                          className="object-contain p-3"
+                          className="object-contain p-2.5 sm:p-3"
                         />
                       </Link>
 
                       {/* Product details */}
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-start justify-between gap-3">
+
+                        <div className="flex items-start justify-between gap-2">
                           <div className="min-w-0">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--primary)]">
+
+                            <p className="text-[9px] font-bold uppercase tracking-[0.08em] text-[var(--primary)] sm:text-[10px] sm:tracking-[0.1em]">
                               {item.product.brandId}
                             </p>
 
                             <Link
                               href={`/product/${item.product.slug}`}
-                              className="mt-1 block"
+                              className="mt-0.5 block sm:mt-1"
                             >
-                              <h3 className="line-clamp-2 text-sm font-bold leading-5 text-[var(--dark)] hover:text-[var(--primary)] sm:text-base">
+                              <h3 className="line-clamp-2 text-[13px] font-bold leading-[18px] text-[var(--dark)] hover:text-[var(--primary)] sm:text-base sm:leading-5">
                                 {item.product.name}
                               </h3>
                             </Link>
 
                             {item.product.model && (
-                              <p className="mt-1 text-xs text-[var(--text-muted)]">
+                              <p className="mt-0.5 truncate text-[10px] text-[var(--text-muted)] sm:mt-1 sm:text-xs">
                                 Model: {item.product.model}
                               </p>
                             )}
@@ -130,15 +136,17 @@ export default function CartPage() {
                               removeFromCart(item.product.id)
                             }
                             aria-label={`Remove ${item.product.name}`}
-                            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[var(--text-muted)] hover:bg-red-50 hover:text-[var(--danger)]"
+                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[var(--text-muted)] transition-colors hover:bg-red-50 hover:text-[var(--danger)] sm:h-8 sm:w-8 sm:rounded-lg"
                           >
-                            <Trash2 className="h-4 w-4" />
+                            <Trash2 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                           </button>
                         </div>
 
-                        <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+                        <div className="mt-3 flex flex-wrap items-center justify-between gap-3 sm:mt-4 sm:gap-4">
+
                           {/* Quantity */}
-                          <div className="flex h-9 items-center overflow-hidden rounded-lg border border-[var(--border)]">
+                          <div className="flex h-8 items-center overflow-hidden rounded-md border border-[var(--border)] sm:h-9 sm:rounded-lg">
+
                             <button
                               type="button"
                               onClick={() =>
@@ -148,12 +156,12 @@ export default function CartPage() {
                                 )
                               }
                               aria-label="Decrease quantity"
-                              className="flex h-full w-9 items-center justify-center text-[var(--dark)] hover:bg-[var(--background-soft)]"
+                              className="flex h-full w-8 items-center justify-center text-[var(--dark)] hover:bg-[var(--background-soft)] sm:w-9"
                             >
-                              <Minus className="h-3.5 w-3.5" />
+                              <Minus className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                             </button>
 
-                            <span className="flex h-full min-w-9 items-center justify-center border-x border-[var(--border)] px-2 text-xs font-bold text-[var(--dark)]">
+                            <span className="flex h-full min-w-8 items-center justify-center border-x border-[var(--border)] px-1.5 text-xs font-bold text-[var(--dark)] sm:min-w-9 sm:px-2">
                               {item.quantity}
                             </span>
 
@@ -166,20 +174,22 @@ export default function CartPage() {
                                 )
                               }
                               aria-label="Increase quantity"
-                              className="flex h-full w-9 items-center justify-center text-[var(--dark)] hover:bg-[var(--background-soft)]"
+                              className="flex h-full w-8 items-center justify-center text-[var(--dark)] hover:bg-[var(--background-soft)] sm:w-9"
                             >
-                              <Plus className="h-3.5 w-3.5" />
+                              <Plus className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                             </button>
+
                           </div>
 
                           {/* Item price */}
-                          <p className="text-base font-bold text-[var(--navy)]">
+                          <p className="text-[15px] font-bold text-[var(--navy)] sm:text-base">
                             Rs.{" "}
                             {(
                               item.product.price *
                               item.quantity
                             ).toLocaleString("en-PK")}
                           </p>
+
                         </div>
                       </div>
                     </div>
@@ -189,12 +199,13 @@ export default function CartPage() {
             </section>
 
             {/* Order summary */}
-            <aside className="sticky top-28 rounded-[var(--radius-xl)] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-sm)]">
-              <h2 className="text-lg font-bold text-[var(--dark)]">
+            <aside className="rounded-xl border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-sm)] sm:sticky sm:top-28 sm:rounded-[var(--radius-xl)] sm:p-6">
+
+              <h2 className="text-[17px] font-bold text-[var(--dark)] sm:text-lg">
                 Order Summary
               </h2>
 
-              <div className="my-5 h-px bg-[var(--border-light)]" />
+              <div className="my-4 h-px bg-[var(--border-light)] sm:my-5" />
 
               <div className="flex items-center justify-between text-sm">
                 <span className="text-[var(--text-muted)]">
@@ -206,35 +217,35 @@ export default function CartPage() {
                 </span>
               </div>
 
-              <div className="mt-4 flex items-center justify-between text-sm">
+              <div className="mt-3 flex items-center justify-between gap-3 text-sm sm:mt-4">
                 <span className="text-[var(--text-muted)]">
                   Delivery
                 </span>
 
-                <span className="font-semibold text-[var(--dark)]">
+                <span className="text-right text-xs font-semibold text-[var(--dark)] sm:text-sm">
                   Calculated at checkout
                 </span>
               </div>
 
-              <div className="my-5 h-px bg-[var(--border-light)]" />
+              <div className="my-4 h-px bg-[var(--border-light)] sm:my-5" />
 
               <div className="flex items-center justify-between">
-                <span className="text-base font-bold text-[var(--dark)]">
+                <span className="text-[15px] font-bold text-[var(--dark)] sm:text-base">
                   Total
                 </span>
 
-                <span className="text-xl font-bold text-[var(--navy)]">
+                <span className="text-xl font-bold text-[var(--navy)] sm:text-xl">
                   Rs. {subtotal.toLocaleString("en-PK")}
                 </span>
               </div>
 
               {/* COD */}
-              <div className="mt-5 rounded-lg bg-[var(--primary-light)] p-4">
-                <p className="text-sm font-bold text-[var(--dark)]">
+              <div className="mt-4 rounded-lg bg-[var(--primary-light)] p-3 sm:mt-5 sm:p-4">
+                <p className="text-[13px] font-bold text-[var(--dark)] sm:text-sm">
                   Cash on Delivery
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-[var(--text-muted)]">
+                <p className="mt-0.5 text-[11px] leading-5 text-[var(--text-muted)] sm:mt-1 sm:text-xs">
                   Payment will be collected when your order is delivered.
                 </p>
               </div>
@@ -242,15 +253,18 @@ export default function CartPage() {
               {/* Checkout */}
               <Link
                 href="/checkout"
-                className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-5 text-sm font-bold text-white transition-colors hover:bg-[var(--primary-hover)]"
+                className="mt-4 flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-4 text-[13px] font-bold !text-white transition-colors hover:bg-[var(--primary-hover)] sm:mt-5 sm:h-12 sm:px-5 sm:text-sm"
               >
-                Proceed to Checkout
-                <ArrowRight className="h-4 w-4" />
+                <span className="!text-white">
+                  Proceed to Checkout
+                </span>
+
+                <ArrowRight className="h-4 w-4 !text-white" />
               </Link>
 
               <Link
                 href="/"
-                className="mt-4 block text-center text-sm font-semibold text-[var(--navy)] hover:text-[var(--primary)]"
+                className="mt-3 block text-center text-[13px] font-semibold text-[var(--navy)] hover:text-[var(--primary)] sm:mt-4 sm:text-sm"
               >
                 Continue Shopping
               </Link>

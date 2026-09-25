@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Check,
-  ChevronDown,
   ShoppingCart,
   Truck,
 } from "lucide-react";
@@ -120,38 +119,38 @@ export default function ProductDetails({
       : generalFaqs;
 
   return (
-    <div className="space-y-5 sm:space-y-6">
+    <div className="space-y-4 sm:space-y-6">
 
       {/* MAIN PRODUCT */}
-      <section className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-[var(--shadow-sm)]">
+      <section className="overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-[var(--shadow-sm)] sm:rounded-2xl">
         <div className="grid lg:grid-cols-[1fr_0.9fr]">
 
           {/* PRODUCT GALLERY */}
           <div className="border-b border-[var(--border-light)] lg:border-b-0 lg:border-r">
-            <div className="relative aspect-square bg-[var(--background-soft)]">
+            <div className="relative aspect-[1.08/1] bg-[var(--background-soft)] sm:aspect-square">
               <Image
                 src={selectedImage}
                 alt={product.name}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-contain p-5 sm:p-8"
+                className="object-contain p-4 sm:p-8"
               />
 
-              <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold text-[var(--navy)] shadow-sm">
+              <span className="absolute left-3 top-3 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-[var(--navy)] shadow-sm sm:left-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[11px]">
                 Cash on Delivery
               </span>
             </div>
 
             {galleryImages.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto border-t border-[var(--border-light)] p-3">
+              <div className="flex gap-2 overflow-x-auto border-t border-[var(--border-light)] p-2.5 sm:p-3">
                 {galleryImages.map((image, index) => (
                   <button
                     key={`${image}-${index}`}
                     type="button"
                     onClick={() => setSelectedImage(image)}
                     aria-label={`View product image ${index + 1}`}
-                    className={`relative h-13 w-13 shrink-0 overflow-hidden rounded-lg border bg-[var(--background-soft)] transition-colors ${
+                    className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border bg-[var(--background-soft)] transition-colors sm:h-13 sm:w-13 ${
                       selectedImage === image
                         ? "border-[var(--primary)]"
                         : "border-transparent hover:border-[var(--border)]"
@@ -171,21 +170,21 @@ export default function ProductDetails({
           </div>
 
           {/* PRODUCT INFORMATION */}
-          <div className="flex flex-col p-6 sm:p-7 lg:p-8">
+          <div className="flex flex-col p-4 sm:p-7 lg:p-8">
 
             {/* Brand */}
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--primary)] sm:text-[11px]">
               {brand?.name ?? product.brandId}
             </p>
 
             {/* Product Name */}
-            <h1 className="!mt-2 !text-[28px] !font-semibold !leading-[1.2] !tracking-tight text-[var(--dark)] sm:!text-[32px]">
+            <h1 className="!mt-2 !text-[24px] !font-semibold !leading-[1.2] !tracking-tight text-[var(--dark)] sm:!text-[32px]">
               {product.name}
             </h1>
 
             {/* Model */}
             {product.model && (
-              <p className="mt-2 text-sm text-[var(--text-muted)]">
+              <p className="mt-2 text-[13px] text-[var(--text-muted)] sm:text-sm">
                 Model:{" "}
                 <span className="font-medium text-[var(--dark)]">
                   {product.model}
@@ -193,13 +192,13 @@ export default function ProductDetails({
               </p>
             )}
 
-            <div className="my-4 h-px bg-[var(--border-light)]" />
+            <div className="my-3 h-px bg-[var(--border-light)] sm:my-4" />
 
             {/* PRICE */}
             <div>
               {product.price > 0 ? (
                 <>
-                  <p className="text-[25px] font-semibold tracking-tight text-[var(--navy)]">
+                  <p className="text-[22px] font-semibold tracking-tight text-[var(--navy)] sm:text-[25px]">
                     Rs.{" "}
                     {product.price.toLocaleString("en-PK")}
                   </p>
@@ -212,7 +211,7 @@ export default function ProductDetails({
                   )}
                 </>
               ) : (
-                <p className="text-xl font-semibold text-[var(--navy)]">
+                <p className="text-lg font-semibold text-[var(--navy)] sm:text-xl">
                   Price on request
                 </p>
               )}
@@ -221,33 +220,33 @@ export default function ProductDetails({
             {/* PURCHASE BENEFITS */}
             <div className="mt-4 space-y-2">
 
-              <div className="flex items-center gap-3 rounded-lg bg-[var(--primary-light)] px-3.5 py-2.5">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white">
-                  <Check className="h-4 w-4" />
+              <div className="flex items-center gap-3 rounded-lg bg-[var(--primary-light)] px-3 py-2">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white sm:h-8 sm:w-8">
+                  <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold text-[var(--dark)]">
+                  <p className="text-[13px] font-semibold text-[var(--dark)] sm:text-sm">
                     Cash on Delivery
                   </p>
 
-                  <p className="text-xs text-[var(--text-muted)]">
+                  <p className="text-[11px] text-[var(--text-muted)] sm:text-xs">
                     Pay when your order is delivered.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-lg border border-[var(--border-light)] px-3.5 py-2.5">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-[var(--navy)]">
-                  <Truck className="h-4 w-4" />
+              <div className="flex items-center gap-3 rounded-lg border border-[var(--border-light)] px-3 py-2">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-[var(--navy)] sm:h-8 sm:w-8">
+                  <Truck className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold text-[var(--dark)]">
+                  <p className="text-[13px] font-semibold text-[var(--dark)] sm:text-sm">
                     Delivery available
                   </p>
 
-                  <p className="text-xs text-[var(--text-muted)]">
+                  <p className="text-[11px] text-[var(--text-muted)] sm:text-xs">
                     Delivery details confirmed at checkout.
                   </p>
                 </div>
@@ -256,9 +255,9 @@ export default function ProductDetails({
             </div>
 
             {/* PURCHASE */}
-            <div className="mt-5">
+            <div className="mt-4 sm:mt-5">
 
-              <p className="mb-2 text-sm font-medium text-[var(--dark)]">
+              <p className="mb-2 text-[13px] font-medium text-[var(--dark)] sm:text-sm">
                 Quantity
               </p>
 
@@ -288,11 +287,11 @@ export default function ProductDetails({
 
               </div>
 
-             <button
-  type="button"
-  onClick={handleAddToCart}
-  className="mt-3.5 flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-[0.98]"
->
+              <button
+                type="button"
+                onClick={handleAddToCart}
+                className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-[0.98]"
+              >
                 {added ? (
                   <>
                     <Check className="h-5 w-5" />
@@ -309,7 +308,7 @@ export default function ProductDetails({
 
             <Link
               href="/shop"
-              className="mt-3 inline-flex text-sm font-medium text-[var(--navy)] transition-colors hover:text-[var(--primary)]"
+              className="mt-2.5 inline-flex text-[13px] font-medium text-[var(--navy)] transition-colors hover:text-[var(--primary)] sm:mt-3 sm:text-sm"
             >
               ← Continue Shopping
             </Link>
@@ -319,14 +318,14 @@ export default function ProductDetails({
 
       {/* DESCRIPTION */}
       {product.description && (
-        <section className="rounded-xl border border-[var(--border)] bg-white px-5 py-5 sm:px-7">
+        <section className="rounded-xl border border-[var(--border)] bg-white px-4 py-4 sm:px-7 sm:py-5">
           <h2 className="!text-lg !font-semibold !leading-6 text-[var(--dark)]">
             Product Description
           </h2>
 
           <div className="mt-2 h-px bg-[var(--border-light)]" />
 
-        <p className="mt-3 text-[15px] leading-7 text-[var(--text)]">
+          <p className="mt-3 text-[14px] leading-6 text-[var(--text)] sm:text-[15px] sm:leading-7">
             {product.description}
           </p>
         </section>
@@ -334,19 +333,19 @@ export default function ProductDetails({
 
       {/* HIGHLIGHTS */}
       {highlights.length > 0 && (
-        <section className="rounded-xl border border-[var(--border)] bg-white px-5 py-5 sm:px-7">
+        <section className="rounded-xl border border-[var(--border)] bg-white px-4 py-4 sm:px-7 sm:py-5">
           <h2 className="!text-lg !font-semibold !leading-6 text-[var(--dark)]">
             Product Highlights
           </h2>
 
-          <p className="mt-1 text-sm text-[var(--text-muted)]">
+          <p className="mt-1 text-[13px] text-[var(--text-muted)] sm:text-sm">
             Key features of this product
           </p>
 
           <div className="mt-3 h-px bg-[var(--border-light)]" />
 
           <ul
-            className={`mt-3 grid gap-x-8 gap-y-2.5 ${
+            className={`mt-3 grid gap-x-8 gap-y-2 ${
               highlights.length > 1
                 ? "sm:grid-cols-2"
                 : ""
@@ -355,13 +354,13 @@ export default function ProductDetails({
             {highlights.map((feature, index) => (
               <li
                 key={`${feature}-${index}`}
-                className="flex items-center gap-2.5 py-1.5"
+                className="flex items-center gap-2.5 py-1"
               >
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white">
                   <Check className="h-3 w-3" />
                 </span>
 
-                <span className="text-sm text-[var(--text)]">
+                <span className="text-[13px] text-[var(--text)] sm:text-sm">
                   {feature}
                 </span>
               </li>
@@ -373,12 +372,12 @@ export default function ProductDetails({
       {/* SPECIFICATIONS */}
       {specificationEntries &&
         specificationEntries.length > 0 && (
-          <section className="rounded-xl border border-[var(--border)] bg-white px-5 py-5 sm:px-7">
+          <section className="rounded-xl border border-[var(--border)] bg-white px-4 py-4 sm:px-7 sm:py-5">
             <h2 className="!text-lg !font-semibold !leading-6 text-[var(--dark)]">
               Product Specifications
             </h2>
 
-            <p className="mt-1 text-sm text-[var(--text-muted)]">
+            <p className="mt-1 text-[13px] text-[var(--text-muted)] sm:text-sm">
               Product details and specifications
             </p>
 
@@ -387,17 +386,17 @@ export default function ProductDetails({
                 ([label, value], index) => (
                   <div
                     key={label}
-                    className={`grid grid-cols-1 gap-1 px-4 py-2.5 sm:grid-cols-2 sm:gap-4 ${
+                    className={`grid grid-cols-1 gap-1 px-3.5 py-2.5 sm:grid-cols-2 sm:gap-4 sm:px-4 ${
                       index % 2 === 0
                         ? "bg-[var(--background-soft)]"
                         : "bg-white"
                     }`}
                   >
-                    <span className="text-sm font-medium text-[var(--text-muted)]">
+                    <span className="text-[13px] font-medium text-[var(--text-muted)] sm:text-sm">
                       {label}
                     </span>
 
-                    <span className="text-sm font-medium text-[var(--dark)]">
+                    <span className="text-[13px] font-medium text-[var(--dark)] sm:text-sm">
                       {value}
                     </span>
                   </div>
@@ -408,38 +407,34 @@ export default function ProductDetails({
         )}
 
       {/* FAQ */}
-   {/* FAQ */}
-{faqs.length > 0 && (
-  <section className="rounded-xl border border-[var(--border)] bg-white px-5 py-5 sm:px-7">
-    <h2 className="!text-lg !font-semibold !leading-6 text-[var(--dark)]">
-      Frequently Asked Questions
-    </h2>
+      {faqs.length > 0 && (
+        <section className="rounded-xl border border-[var(--border)] bg-white px-4 py-4 sm:px-7 sm:py-5">
+          <h2 className="!text-lg !font-semibold !leading-6 text-[var(--dark)]">
+            Frequently Asked Questions
+          </h2>
 
-    <p className="mt-1 text-sm text-[var(--text-muted)]">
-      Common questions about this product and ordering.
-    </p>
-
-    <div className="mt-4 divide-y divide-[var(--border-light)] border-t border-[var(--border-light)]">
-      {faqs.map((faq, index) => (
-        <div
-          key={`${faq.question}-${index}`}
-          className="py-4"
-        >
-          <p className="text-sm font-semibold text-[var(--dark)]">
-            {faq.question}
+          <p className="mt-1 text-[13px] text-[var(--text-muted)] sm:text-sm">
+            Common questions about this product and ordering.
           </p>
 
-          <p className="mt-1.5 text-sm leading-6 text-[var(--text-muted)]">
-            {faq.answer}
-          </p>
-        </div>
-      ))}
-    </div>
-  </section>
-)}
+          <div className="mt-4 divide-y divide-[var(--border-light)] border-t border-[var(--border-light)]">
+            {faqs.map((faq, index) => (
+              <div
+                key={`${faq.question}-${index}`}
+                className="py-3.5 sm:py-4"
+              >
+                <p className="text-[13px] font-semibold text-[var(--dark)] sm:text-sm">
+                  {faq.question}
+                </p>
 
-
-
+                <p className="mt-1.5 text-[13px] leading-5 text-[var(--text-muted)] sm:text-sm sm:leading-6">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

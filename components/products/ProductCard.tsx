@@ -34,30 +34,30 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Image */}
       <Link
         href={`/product/${product.slug}`}
-        className="relative block aspect-square overflow-hidden bg-[var(--background-soft)]"
+        className="relative block aspect-[1.12/1] overflow-hidden bg-[var(--background-soft)] sm:aspect-square"
       >
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+          className="object-contain p-3 transition-transform duration-300 group-hover:scale-105 sm:p-4"
         />
 
         {/* Brand Badge */}
         {brand && (
-          <span className="absolute left-3 top-3 rounded-md bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--navy)] shadow-sm">
+          <span className="absolute left-2.5 top-2.5 rounded-md bg-white px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-[var(--navy)] shadow-sm sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
             {brand.name}
           </span>
         )}
       </Link>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-3 sm:p-4">
 
         {/* Category */}
         {category && (
-          <p className="mb-1 text-[11px] font-medium uppercase tracking-wide text-[var(--text-light)]">
+          <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-[var(--text-light)] sm:text-[11px]">
             {category.name}
           </p>
         )}
@@ -65,24 +65,24 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Product Name */}
         <Link
           href={`/product/${product.slug}`}
-          className="line-clamp-2 min-h-[44px] text-[15px] font-semibold leading-5 text-[var(--navy)] transition-colors hover:text-[var(--primary)]"
+          className="line-clamp-2 min-h-[40px] text-[14px] font-semibold leading-5 text-[var(--navy)] transition-colors hover:text-[var(--primary)] sm:min-h-[44px] sm:text-[15px]"
         >
           {product.name}
         </Link>
 
         {/* Model */}
         {product.model && (
-          <p className="mt-1 truncate text-xs text-[var(--text-light)]">
+          <p className="mt-1 truncate text-[11px] text-[var(--text-light)] sm:text-xs">
             Model: {product.model}
           </p>
         )}
 
         {/* Bottom */}
-        <div className="mt-auto pt-4">
+        <div className="mt-auto pt-3 sm:pt-4">
 
           {/* Price */}
-          <div className="mb-3">
-            <p className="text-lg font-semibold text-[var(--navy)]">
+          <div className="mb-2.5 sm:mb-3">
+            <p className="text-[17px] font-semibold text-[var(--navy)] sm:text-lg">
               Rs. {product.price.toLocaleString("en-PK")}
             </p>
           </div>
@@ -90,14 +90,13 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* View Product */}
           <Link
             href={`/product/${product.slug}`}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold !text-white shadow-sm transition-all hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-[0.98]"
+            className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-[var(--primary)] px-2.5 py-2.5 text-[13px] font-semibold !text-white shadow-sm transition-all hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-[0.98] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
           >
-            <ShoppingCart className="h-4 w-4 !text-white" />
+            <ShoppingCart className="h-4 w-4 shrink-0 !text-white" />
             <span className="!text-white">
               View Product
             </span>
           </Link>
-
         </div>
       </div>
     </article>
