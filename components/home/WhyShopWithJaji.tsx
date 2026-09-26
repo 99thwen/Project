@@ -28,9 +28,9 @@ const benefits = [
   },
   {
     icon: Truck,
-    title: "Fast Delivery in Peshawar",
+    title: "Local Expertise",
     description:
-      "Quick delivery across Peshawar, with delivery to other cities available on request.",
+      "Get practical guidance from a local team that understands the needs of customers in Peshawar.",
   },
   {
     icon: Wrench,
@@ -40,9 +40,9 @@ const benefits = [
   },
   {
     icon: MessageCircle,
-    title: "Talk to a Real Person",
+    title: "Product Guidance",
     description:
-      "Questions before buying? Call or WhatsApp us at 0335 9864000 for honest advice, not a sales pitch.",
+      "Not sure which appliance is right for you? We can help you understand your options before you buy.",
   },
 ];
 

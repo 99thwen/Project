@@ -22,33 +22,37 @@ export default function CartPage() {
   } = useCart();
 
   if (items.length === 0) {
-    return (
-      <StoreLayout>
-        <main className="bg-[var(--background-soft)]">
-          <div className="container-main py-10 sm:py-16">
-            <div className="mx-auto max-w-2xl rounded-[var(--radius-xl)] border border-[var(--border)] bg-white px-5 py-12 text-center shadow-[var(--shadow-sm)] sm:px-6 sm:py-16">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--primary-light)] sm:h-16 sm:w-16">
-                <ShoppingBag className="h-6 w-6 text-[var(--primary)] sm:h-7 sm:w-7" />
-              </div>
+    return (<StoreLayout>
+  <main className="bg-[var(--background-soft)]">
+  <div className="container-main py-14 sm:py-16">
+    <div className="mx-auto max-w-2xl rounded-[var(--radius-xl)] border border-[var(--border)] bg-white px-8 py-14 text-center shadow-[var(--shadow-sm)] sm:px-12 sm:py-16">
+      
+      <div className="flex flex-col items-center">
+        
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--primary-light)] sm:h-[68px] sm:w-[68px]">
+          <ShoppingBag className="h-7 w-7 text-[var(--primary)]" />
+        </div>
 
-              <h1 className="mt-5 !text-2xl !font-bold text-[var(--dark)] sm:mt-6 sm:!text-3xl">
-                Your cart is empty
-              </h1>
+        <h1 className="!mt-10 !mb-0 !text-2xl !font-bold tracking-tight text-[var(--dark)] sm:!text-3xl">
+          Your cart is waiting
+        </h1>
 
-              <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[var(--text-muted)]">
-                You haven't added any products to your cart yet.
-              </p>
+        <p className="!mt-5 !mb-0 max-w-md text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]">
+          Explore our appliances and find something that's right for your home.
+        </p>
 
-              <Link
-                href="/"
-                className="mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-[var(--primary)] px-6 text-sm font-bold !text-white transition-colors hover:bg-[var(--primary-hover)]"
-              >
-                Continue Shopping
-              </Link>
-            </div>
-          </div>
-        </main>
-      </StoreLayout>
+        <Link
+          href="/shop"
+          className="!mt-9 inline-flex h-11 items-center justify-center rounded-lg bg-[var(--primary)] px-7 text-sm font-bold !text-white transition-colors hover:bg-[var(--primary-hover)]"
+        >
+          Start Shopping
+        </Link>
+
+      </div>
+    </div>
+  </div>
+</main>
+</StoreLayout>
     );
   }
 

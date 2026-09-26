@@ -153,20 +153,24 @@ export default function Footer() {
 
   <div className="mt-6 flex gap-3">
     <a
-      href="#"
-      aria-label="Facebook"
-      className="flex h-9 w-9 items-center justify-center rounded-full bg-white !text-[#222222] transition-opacity hover:opacity-80"
-    >
+  href="https://www.facebook.com/p/Jaji-Electronics-61593231897988/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook"
+  className="flex h-9 w-9 items-center justify-center rounded-full bg-white !text-[#222222] transition-opacity hover:opacity-80"
+>
       <FaFacebookF className="h-4 w-4" />
     </a>
 
     <a
-      href="#"
-      aria-label="Instagram"
-      className="flex h-9 w-9 items-center justify-center rounded-full bg-white !text-[#222222] transition-opacity hover:opacity-80"
-    >
-      <FaInstagram className="h-4 w-4" />
-    </a>
+  href="https://www.instagram.com/jajielectronics/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+  className="flex h-9 w-9 items-center justify-center rounded-full bg-white !text-[#222222] transition-opacity hover:opacity-80"
+>
+  <FaInstagram className="h-4 w-4" />
+</a>
 
     <a
       href="#"
