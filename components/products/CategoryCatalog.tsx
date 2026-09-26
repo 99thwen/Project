@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
 
 import { brands } from "@/data/brands";
@@ -24,6 +24,7 @@ export default function CategoryCatalog({
 }: CategoryCatalogProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const [selectedBrands, setSelectedBrands] = useState<string[]>(
     initialBrand ? [initialBrand] : []
@@ -96,7 +97,7 @@ export default function CategoryCatalog({
 
     const query = params.toString();
 
-    router.push(query ? `/shop?${query}` : "/shop", {
+    router.push(query ? `${pathname}?${query}` : pathname, {
       scroll: false,
     });
   }
@@ -119,7 +120,7 @@ export default function CategoryCatalog({
     setSelectedCategory("");
     setSelectedBrands([]);
 
-    router.push("/shop", {
+    router.push(pathname, {
       scroll: false,
     });
   }
