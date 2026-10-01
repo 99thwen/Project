@@ -43,7 +43,7 @@ export default function Hero() {
           alt="Jaji Home lifestyle"
           fill
           priority
-          sizes="58vw"
+          sizes="(max-width: 768px) 100vw, 58vw"
           className="object-cover object-center"
         />
 

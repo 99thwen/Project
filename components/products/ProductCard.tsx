@@ -2,100 +2,220 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
 import type { Product } from "@/types/product";
-import { useCart } from "@/components/cart/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
-  const { addToCart } = useCart();
-
+export default function ProductCard({
+  product,
+}: ProductCardProps) {
   const brand = brands.find(
-    (item) => item.id === product.brandId
+    (item) => item.id === product.brandId,
   );
 
   const category = categories.find(
-    (item) => item.id === product.categoryId
+    (item) => item.id === product.categoryId,
   );
 
-  function handleAddToCart() {
-    addToCart(product);
-  }
-
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-white transition-all duration-200 hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]">
-
-      {/* Product Image */}
+    <article
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white
+        rounded-2xl border border-[var(--border)]
+        bg-white
+        transition-all duration-300 ease-out
+        hover:-translate-y-1
+        hover:border-[var(--primary)]/30
+        hover:shadow-[var(--shadow-md)]
+      "
+    >
+      {/* PRODUCT IMAGE */}
       <Link
         href={`/product/${product.slug}`}
-        className="relative block aspect-[1.12/1] overflow-hidden bg-[var(--background-soft)] sm:aspect-square"
+        className="
+          relative block aspect-[1.08/1]
+          overflow-hidden
+          bg-[var(--background-soft)]
+          sm:aspect-square
+        "
       >
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          className="object-contain p-3 transition-transform duration-300 group-hover:scale-105 sm:p-4"
+          className="
+            object-contain
+            scale-[1.08] p-3
+            transition-transform duration-500 ease-out
+            group-hover:scale-[1.14]
+            sm:p-4
+            lg:p-5
+          "
         />
 
-        {/* Brand Badge */}
+        {/* BRAND */}
         {brand && (
-          <span className="absolute left-2.5 top-2.5 rounded-md bg-white px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-[var(--navy)] shadow-sm sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
+          <span
+            className="
+              absolute left-3 top-3
+              rounded-full
+              border border-white/80
+              bg-white/95
+              px-2.5 py-1
+              text-[9px] font-semibold
+              uppercase tracking-[0.08em]
+              text-[var(--navy)]
+              shadow-sm
+              backdrop-blur-sm
+              sm:left-4 sm:top-4
+              sm:text-[10px]
+            "
+          >
             {brand.name}
           </span>
         )}
+
+        {/* IMAGE HOVER OVERLAY */}
+        <div
+          className="
+            pointer-events-none absolute inset-0
+            bg-gradient-to-t
+            from-black/[0.025]
+            via-transparent
+            to-transparent
+            opacity-0
+            transition-opacity duration-300
+            group-hover:opacity-100
+          "
+        />
       </Link>
 
-      {/* Content */}
-      <div className="flex flex-1 flex-col p-3 sm:p-4">
-
-        {/* Category */}
+      {/* CONTENT */}
+      <div
+        className="
+          flex flex-1 flex-col
+          px-4 pb-4 pt-4
+          sm:px-5 sm:pb-5 sm:pt-4
+        "
+      >
+        {/* CATEGORY */}
         {category && (
-          <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-[var(--text-light)] sm:text-[11px]">
+          <p
+            className="
+              mb-1.5
+              text-[10px] font-semibold
+              uppercase tracking-[0.14em]
+              text-[var(--text-muted)]
+            "
+          >
             {category.name}
           </p>
         )}
 
-        {/* Product Name */}
+        {/* PRODUCT NAME */}
         <Link
           href={`/product/${product.slug}`}
-          className="line-clamp-2 min-h-[40px] text-[14px] font-semibold leading-5 text-[var(--navy)] transition-colors hover:text-[var(--primary)] sm:min-h-[44px] sm:text-[15px]"
+          className="
+            line-clamp-2
+            min-h-[42px]
+            text-[14px]
+            font-semibold
+            leading-[1.45]
+            text-[var(--navy)]
+            transition-colors duration-200
+            hover:text-[var(--primary)]
+            sm:min-h-[46px]
+            sm:text-[15px]
+          "
         >
           {product.name}
         </Link>
 
-        {/* Model */}
+        {/* MODEL */}
         {product.model && (
-          <p className="mt-1 truncate text-[11px] text-[var(--text-light)] sm:text-xs">
+          <p
+            className="
+              mt-1.5
+              truncate
+              text-[11px]
+              text-[var(--text-muted)]
+              sm:text-[12px]
+            "
+          >
             Model: {product.model}
           </p>
         )}
 
-        {/* Bottom */}
-        <div className="mt-auto pt-3 sm:pt-4">
-
-          {/* Price */}
-          <div className="mb-2.5 sm:mb-3">
-            <p className="text-[17px] font-semibold text-[var(--navy)] sm:text-lg">
+        {/* BOTTOM CONTENT */}
+        <div className="mt-auto pt-4 sm:pt-5">
+          {/* PRICE */}
+          {product.price > 0 ? (
+            <p
+              className="
+                text-[18px]
+                font-semibold
+                tracking-tight
+                text-[var(--navy)]
+                sm:text-[19px]
+              "
+            >
               Rs. {product.price.toLocaleString("en-PK")}
             </p>
-          </div>
+          ) : (
+            <p
+              className="
+                text-[16px]
+                font-semibold
+                tracking-tight
+                text-[var(--navy)]
+                sm:text-[17px]
+              "
+            >
+              Price on request
+            </p>
+          )}
 
-          {/* View Product */}
+          {/* VIEW PRODUCT */}
           <Link
             href={`/product/${product.slug}`}
-            className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-[var(--primary)] px-2.5 py-2.5 text-[13px] font-semibold !text-white shadow-sm transition-all hover:bg-[var(--primary-hover)] hover:shadow-md active:scale-[0.98] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
+            aria-label={`View ${product.name}`}
+            className="
+              mt-3 flex h-11 w-full
+              items-center justify-center
+              gap-2
+              rounded-xl
+              bg-[var(--primary)]
+              px-4
+              text-[12px]
+              font-semibold
+              !text-white
+              transition-all duration-300 ease-out
+              hover:-translate-y-0.5
+              hover:bg-[var(--primary-hover)]
+              hover:shadow-md
+              active:scale-[0.98]
+              sm:text-[13px]
+            "
           >
-            <ShoppingCart className="h-4 w-4 shrink-0 !text-white" />
             <span className="!text-white">
               View Product
             </span>
+
+            <ArrowUpRight
+              className="
+                h-4 w-4 shrink-0
+                !text-white
+                transition-transform duration-300
+                group-hover:translate-x-0.5
+                group-hover:-translate-y-0.5
+              "
+            />
           </Link>
         </div>
       </div>

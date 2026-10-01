@@ -57,21 +57,25 @@ export default function Header() {
         <div className="container-main flex h-[64px] items-center gap-3 md:gap-8">
 
           {/* LOGO */}
-          <Link
+                  <Link
             href="/"
-            className="flex h-[58px] w-[155px] shrink-0 items-center"
+            className="flex h-[58px] w-[200px] shrink-0 items-center"
             aria-label="Jaji Electronics home"
           >
-            <Image
-              src="/logo.webp"
-              alt="Jaji Electronics"
-              width={180}
-              height={80}
-              className="h-full w-full object-contain"
-              priority
-            />
-          </Link>
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/logo.webp"
+                alt="Jaji Electronics"
+                width={38}
+                height={38}
+                className="h-[38px] w-[38px] object-contain"
+              />
 
+              <span className="whitespace-nowrap text-[18px] font-semibold tracking-[-0.02em] text-[var(--primary)]">
+                Jaji Electronics
+              </span>
+            </div>
+          </Link>
           {/* SEARCH */}
           <div className="hidden min-w-0 flex-1 justify-center md:flex">
             <form

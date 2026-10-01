@@ -297,7 +297,7 @@ export default function PrivacyPolicyPage() {
 
                   <p>Phone: 0335 9864000</p>
 
-                  <p>Email: jajielectronics97@gmail.com</p>
+                  <p>Email: jajipearl@gmail.com</p>
 
                   <p>
                     Address: Shaheen Market, Karkhano, Peshawar, Pakistan

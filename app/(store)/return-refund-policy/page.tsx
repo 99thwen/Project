@@ -190,10 +190,10 @@ export default function ReturnRefundPolicyPage() {
                       Email:
                     </span>{" "}
                     <a
-                      href="mailto:jajielectronics97@gmail.com"
+                      href="mailto:jajipearl@gmail.com"
                       className="text-[var(--primary)] hover:underline"
                     >
-                      jajielectronics97@gmail.com
+                      jajipearl@gmail.com
                     </a>
                   </p>
 
