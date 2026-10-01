@@ -10,9 +10,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteUrl = "https://www.jajielectronics.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
