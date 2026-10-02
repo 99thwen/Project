@@ -1,11 +1,6 @@
 import Image from "next/image";
-import Link from "next/link"
-import {
-  Home,
-  SprayCan,
-  Sofa,
-  Leaf,
-} from "lucide-react";
+import Link from "next/link";
+import { Home, SprayCan, Sofa, Leaf } from "lucide-react";
 
 const heroItems = [
   {
@@ -33,13 +28,10 @@ const heroItems = [
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-white">
-
-      {/* =====================================================
-          DESKTOP IMAGE
-      ====================================================== */}
+      {/* Desktop Image */}
       <div className="absolute right-0 top-0 hidden h-[500px] w-[58%] overflow-hidden lg:block">
         <Image
-          src="/images/jaji-home-lifestyle.webp"
+          src="/images/general.webp"
           alt="Jaji Home lifestyle"
           fill
           priority
@@ -50,12 +42,10 @@ export default function Hero() {
         <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white via-white/60 to-transparent" />
       </div>
 
-      {/* =====================================================
-          MOBILE IMAGE
-      ====================================================== */}
+      {/* Mobile Image */}
       <div className="relative h-[260px] overflow-hidden sm:h-[340px] lg:hidden">
         <Image
-          src="/images/jaji-home-lifestyle.webp"
+          src="/images/public.webp"
           alt="Jaji Home lifestyle"
           fill
           priority
@@ -66,58 +56,43 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </div>
 
-      {/* =====================================================
-          HERO CONTENT
-      ====================================================== */}
+      {/* Hero Content */}
       <div className="container-main relative z-10">
-
         <div className="flex min-h-0 w-full items-center py-10 sm:py-12 lg:min-h-[500px] lg:w-[48%] lg:py-0">
-
           <div className="w-full max-w-[540px]">
-
-            {/* LABEL */}
+            {/* Label */}
             <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--primary)] sm:text-xs sm:tracking-[0.34em]">
               Jaji Home
             </p>
 
-            {/* HEADING */}
-            <h1 className="mt-3 text-[34px] font-semibold leading-[1.08] tracking-[-0.035em] text-[var(--navy)] sm:mt-4 sm:text-5xl lg:text-[48px]">
-              Comfort for every
-              <br className="hidden lg:block" />
-              corner of your{" "}
+            {/* Heading */}
+            <h1 className="mt-3 text-[34px] font-bold leading-[1.08] tracking-[-0.035em] text-[var(--navy)] sm:mt-4 sm:text-5xl lg:text-[48px]">
+              Everything Your Home Needs.
+              <br />
               <span className="text-[var(--primary)]">
-                home
+                All in One Place.
               </span>
             </h1>
 
-            {/* DESCRIPTION */}
+            {/* Description */}
             <p className="mt-4 max-w-[480px] text-sm leading-6 text-slate-600 sm:mt-5 sm:text-base">
-              Discover home essentials for a fresher, cleaner
-              and more comfortable lifestyle.
+              Discover home essentials for a fresher, cleaner and more
+              comfortable lifestyle.
             </p>
 
             {/* CTA */}
-            <button
-              type="button"
-              disabled
-              className="mt-5 inline-flex items-center gap-2 border-b-2 border-[var(--primary)] pb-1.5 text-sm font-semibold text-[var(--navy)] disabled:cursor-default disabled:opacity-100 sm:mt-6"
+            <Link
+              href="/shop"
+              className="mt-5 inline-flex h-11 items-center gap-2 rounded-lg bg-[var(--primary)] px-5 text-sm font-semibold !text-white transition-colors hover:bg-[var(--primary-hover)] sm:mt-6"
             >
-             <Link
-  href="/shop"
-  style={{ color: "#ffffff" }}
-  className="inline-flex h-11 items-center gap-2 rounded-lg bg-[var(--primary)] px-5 text-sm font-semibold !text-white transition-colors hover:bg-[var(--primary-hover)]"
->
-  <span style={{ color: "#ffffff" }}>Explore Jaji Home</span>
-  <span aria-hidden="true" style={{ color: "#ffffff" }}>→</span>
-</Link>
-            
-            </button>
+              <span className="!text-white">Explore Jaji Home</span>
+              <span aria-hidden="true" className="!text-white">
+                →
+              </span>
+            </Link>
 
-
-
-            {/* FEATURES */}
+            {/* Features */}
             <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-5 sm:mt-10 sm:flex sm:items-stretch sm:gap-0">
-
               {heroItems.map((item, index) => {
                 const Icon = item.icon;
 
@@ -126,7 +101,7 @@ export default function Hero() {
                     key={item.label}
                     className={`flex items-center gap-2.5 ${
                       index !== 0
-                        ? "border-slate-200 sm:border-l sm:pl-4 sm:ml-4"
+                        ? "border-slate-200 sm:ml-4 sm:border-l sm:pl-4"
                         : ""
                     } ${
                       index > 1
@@ -148,9 +123,7 @@ export default function Hero() {
                   </div>
                 );
               })}
-
             </div>
-
           </div>
         </div>
       </div>
