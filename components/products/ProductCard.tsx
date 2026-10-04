@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-
+import { useProductPrice } from "@/lib/useProductPrice";
 import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
 import type { Product } from "@/types/product";
@@ -12,9 +12,15 @@ interface ProductCardProps {
   product: Product;
 }
 
+
 export default function ProductCard({
   product,
 }: ProductCardProps) {
+  const currentPrice = useProductPrice(
+    product.id,
+    product.price,
+  );
+
   const brand = brands.find(
     (item) => item.id === product.brandId,
   );
@@ -22,7 +28,6 @@ export default function ProductCard({
   const category = categories.find(
     (item) => item.id === product.categoryId,
   );
-
   return (
     <article
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white
@@ -155,7 +160,7 @@ export default function ProductCard({
         {/* BOTTOM CONTENT */}
         <div className="mt-auto pt-4 sm:pt-5">
           {/* PRICE */}
-          {product.price > 0 ? (
+          {currentPrice > 0 ? (
             <p
               className="
                 text-[18px]
@@ -165,7 +170,7 @@ export default function ProductCard({
                 sm:text-[19px]
               "
             >
-              Rs. {product.price.toLocaleString("en-PK")}
+              Rs. {currentPrice.toLocaleString("en-PK")}
             </p>
           ) : (
             <p

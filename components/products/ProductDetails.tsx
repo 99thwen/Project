@@ -8,7 +8,7 @@ import {
   ChevronRight,
   ShoppingCart,
 } from "lucide-react";
-
+import { useProductPrice } from "@/lib/useProductPrice";
 import { useEffect, useState } from "react";
 
 import { useCart } from "@/components/cart/CartContext";
@@ -71,6 +71,7 @@ export default function ProductDetails({
   );
 
   const variants = product.variants ?? [];
+  const basePrice = useProductPrice(product.id, product.price);
   const colors = product.colors ?? [];
 
   const [selectedVariantIndex, setSelectedVariantIndex] =
@@ -89,8 +90,7 @@ export default function ProductDetails({
       ? colors[selectedColorIndex]
       : undefined;
 
-  const currentPrice =
-    selectedVariant?.price ?? product.price;
+  const currentPrice = selectedVariant?.price ?? basePrice;
 
   const currentModel =
     selectedVariant?.model ?? product.model;
@@ -191,6 +191,8 @@ function showNextImage() {
     setQuantity((current) => Math.max(1, current - 1));
   }
 
+
+  
   function handleAddToCart() {
     const productToAdd: Product = selectedVariant
       ? {
@@ -209,6 +211,7 @@ function showNextImage() {
         }
       : {
           ...product,
+          price: basePrice,
           image:
             selectedColor?.images?.[0] ??
             product.image,

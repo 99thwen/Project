@@ -1,217 +1,626 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import {
-  collection,
-  doc,
-  getDoc,
-  onSnapshot,
-} from "firebase/firestore";
-
-import { useEffect, useState } from "react";
-import { signOut, onAuthStateChanged } from "firebase/auth";
-import { useRouter } from "next/navigation";
-
-import {
-  ClipboardList,
+  CheckCircle2,
+  Clock3,
+  MapPin,
   Package,
-  ShoppingBag,
-  Tags,
+  Phone,
+  Search,
+  User,
+  XCircle,
 } from "lucide-react";
 
-import { auth, db } from "@/lib/firebase";
-import { products } from "@/data/products";
-import { categories } from "@/data/categories";
+import {
+  getOrders,
+  updateOrderStatus,
+} from "@/lib/orders";
 
-export default function AdminDashboard() {
-  const router = useRouter();
+import type { Order } from "@/types/order";
 
-  const [orderCount, setOrderCount] = useState<number | null>(null);
-  const [pendingOrderCount, setPendingOrderCount] =
-    useState<number | null>(null);
+const statusStyles: Record<Order["status"], string> = {
+  pending:
+    "bg-amber-50 text-amber-700 border-amber-200",
+  confirmed:
+    "bg-blue-50 text-blue-700 border-blue-200",
+  delivered:
+    "bg-green-50 text-green-700 border-green-200",
+  cancelled:
+    "bg-red-50 text-red-700 border-red-200",
+};
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleString("en-PK", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+}
+
+function getStatusIcon(status: Order["status"]) {
+  switch (status) {
+    case "pending":
+      return <Clock3 className="h-3.5 w-3.5" />;
+
+    case "confirmed":
+      return <CheckCircle2 className="h-3.5 w-3.5" />;
+
+    case "delivered":
+      return <CheckCircle2 className="h-3.5 w-3.5" />;
+
+    case "cancelled":
+      return <XCircle className="h-3.5 w-3.5" />;
+
+    default:
+      return null;
+  }
+}
+
+export default function AdminOrdersPage() {
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [updatingId, setUpdatingId] = useState<string | null>(null);
+  const [animatingId, setAnimatingId] = useState<string | null>(null);
+
+  const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState<
+    "all" | Order["status"]
+  >("all");
 
   useEffect(() => {
-    let unsubscribeOrders: (() => void) | undefined;
-
-    const unsubscribeAuth = onAuthStateChanged(
-      auth,
-      async (user) => {
-        if (!user) {
-          router.replace("/admin/login");
-          return;
-        }
-
-        try {
-          const adminRef = doc(db, "admins", user.uid);
-          const adminSnapshot = await getDoc(adminRef);
-
-          if (
-            !adminSnapshot.exists() ||
-            adminSnapshot.data().role !== "admin"
-          ) {
-            await signOut(auth);
-            router.replace("/admin/login");
-            return;
-          }
-
-          const ordersRef = collection(db, "orders");
-
-          unsubscribeOrders = onSnapshot(
-            ordersRef,
-            (snapshot) => {
-              const orders = snapshot.docs.map((document) =>
-                document.data()
-              );
-
-              setOrderCount(orders.length);
-
-              setPendingOrderCount(
-                orders.filter(
-                  (order) => order.status === "pending"
-                ).length
-              );
-            },
-            (error) => {
-              console.error("Failed to load orders:", error);
-              setOrderCount(0);
-              setPendingOrderCount(0);
-            }
-          );
-        } catch (error) {
-          console.error("Admin verification failed:", error);
-
-          await signOut(auth).catch(() => {});
-          router.replace("/admin/login");
-        }
+    async function loadOrders() {
+      try {
+        const data = await getOrders();
+        setOrders(data);
+      } catch (error) {
+        console.error("Failed to load orders:", error);
+      } finally {
+        setLoading(false);
       }
-    );
+    }
 
-    return () => {
-      unsubscribeAuth();
-      unsubscribeOrders?.();
+    loadOrders();
+  }, []);
+
+  async function handleStatusChange(
+    orderId: string,
+    status: Order["status"],
+  ) {
+    try {
+      setUpdatingId(orderId);
+      setAnimatingId(orderId);
+
+      await updateOrderStatus(orderId, status);
+
+      setOrders((current) =>
+        current.map((order) =>
+          order.id === orderId
+            ? { ...order, status }
+            : order,
+        ),
+      );
+
+      setTimeout(() => {
+        setAnimatingId((current) =>
+          current === orderId ? null : current,
+        );
+      }, 500);
+    } catch (error) {
+      console.error(
+        "Failed to update order status:",
+        error,
+      );
+
+      setAnimatingId(null);
+      alert("Failed to update order status.");
+    } finally {
+      setUpdatingId(null);
+    }
+  }
+
+  const counts = useMemo(() => {
+    return {
+      total: orders.length,
+      pending: orders.filter(
+        (order) => order.status === "pending",
+      ).length,
+      confirmed: orders.filter(
+        (order) => order.status === "confirmed",
+      ).length,
+      delivered: orders.filter(
+        (order) => order.status === "delivered",
+      ).length,
+      cancelled: orders.filter(
+        (order) => order.status === "cancelled",
+      ).length,
     };
-  }, [router]);
+  }, [orders]);
 
-  const stats = [
-    {
-      label: "Products",
-      value: products.length,
-      icon: Package,
-    },
-    {
-      label: "Orders",
-      value: orderCount ?? "—",
-      icon: ShoppingBag,
-    },
-    {
-      label: "Pending Orders",
-      value: pendingOrderCount ?? "—",
-      icon: ClipboardList,
-    },
-    {
-      label: "Categories",
-      value: categories.length,
-      icon: Tags,
-    },
-  ];
+  const filteredOrders = useMemo(() => {
+    const query = search.trim().toLowerCase();
+
+    return orders.filter((order) => {
+      const matchesStatus =
+        statusFilter === "all" ||
+        order.status === statusFilter;
+
+      if (!matchesStatus) {
+        return false;
+      }
+
+      if (!query) {
+        return true;
+      }
+
+      const searchableText = [
+        order.id,
+        order.customer.name,
+        order.customer.phone,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return searchableText.includes(query);
+    });
+  }, [orders, search, statusFilter]);
 
   return (
-    <div className="space-y-6 sm:space-y-8">
+    <div className="w-full min-w-0 max-w-full space-y-6 overflow-x-hidden">
+      {/* Header */}
+      <div className="flex min-w-0 items-start justify-between gap-4">
+        <div className="min-w-0">
+          <h1 className="text-[26px] font-bold tracking-tight text-[var(--dark)] sm:text-3xl">
+            Orders
+          </h1>
 
-      {/* Page Header */}
-      <div>
-        <h1 className="text-[26px] font-semibold tracking-[-0.02em] text-[var(--dark)] sm:text-[28px]">
-          Dashboard
-        </h1>
+          <p className="mt-1 text-[13px] text-[var(--text-muted)] sm:text-sm">
+            View and manage customer orders.
+          </p>
+        </div>
 
-        <p className="mt-1 text-[13px] text-[var(--text-muted)] sm:mt-1.5 sm:text-sm">
-          Overview of your Jaji Electronics store.
-        </p>
+        {!loading && (
+          <div className="shrink-0 rounded-xl border border-[var(--border-light)] bg-white px-3 py-2 text-xs font-medium text-[var(--text-muted)] shadow-sm sm:px-4 sm:text-sm">
+            {orders.length}{" "}
+            {orders.length === 1 ? "order" : "orders"}
+          </div>
+        )}
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
-        {stats.map((stat) => {
-          const Icon = stat.icon;
+      {/* Summary */}
+      {!loading && orders.length > 0 && (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <SummaryCard
+            label="Total"
+            value={counts.total}
+          />
 
-          return (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-[var(--border-light)] bg-white p-4 sm:p-5"
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className="min-w-0">
-                  <p className="truncate text-[12px] text-[var(--text-muted)] sm:text-sm">
-                    {stat.label}
-                  </p>
+          <SummaryCard
+            label="Pending"
+            value={counts.pending}
+            valueClass="text-amber-600"
+          />
 
-                  <p className="mt-1.5 text-[24px] font-semibold tracking-tight text-[var(--dark)] sm:mt-2 sm:text-[28px]">
-                    {stat.value}
-                  </p>
-                </div>
+          <SummaryCard
+            label="Confirmed"
+            value={counts.confirmed}
+            valueClass="text-blue-600"
+          />
 
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--background-soft)] sm:h-9 sm:w-9">
-                  <Icon className="h-4 w-4 text-[var(--primary)] sm:h-[18px] sm:w-[18px]" />
-                </div>
-              </div>
+          <SummaryCard
+            label="Delivered"
+            value={counts.delivered}
+            valueClass="text-green-600"
+          />
+
+          <SummaryCard
+            label="Cancelled"
+            value={counts.cancelled}
+            valueClass="text-red-600"
+          />
+        </div>
+      )}
+
+      {/* Search + Filter */}
+      {!loading && orders.length > 0 && (
+        <div className="rounded-xl border border-[var(--border-light)] bg-white p-3 shadow-sm sm:p-4">
+          <div className="flex min-w-0 flex-col gap-3 sm:flex-row">
+            <div className="relative min-w-0 flex-1">
+              <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-muted)]" />
+
+              <input
+                type="text"
+                value={search}
+                onChange={(event) =>
+                  setSearch(event.target.value)
+                }
+                placeholder="Search by order ID, name or phone..."
+                className="h-10 w-full rounded-lg border border-[var(--border-light)] bg-[var(--background-soft)] pl-10 pr-3 text-sm text-[var(--dark)] outline-none placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] focus:bg-white"
+              />
             </div>
-          );
-        })}
-      </div>
 
-      {/* Store Overview */}
-      <div className="rounded-xl border border-[var(--border-light)] bg-white p-4 sm:p-6">
+            <select
+              value={statusFilter}
+              onChange={(event) =>
+                setStatusFilter(
+                  event.target.value as
+                    | "all"
+                    | Order["status"],
+                )
+              }
+              className="h-10 w-full rounded-lg border border-[var(--border-light)] bg-[var(--background-soft)] px-3 text-sm text-[var(--dark)] outline-none focus:border-[var(--primary)] focus:bg-white sm:w-44"
+            >
+              <option value="all">All statuses</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+      )}
 
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h2 className="text-[17px] font-semibold text-[var(--dark)] sm:text-xl">
-              Store Overview
+      {/* Loading */}
+      {loading && (
+        <div className="rounded-2xl border border-[var(--border-light)] bg-white px-4 py-20 text-center shadow-sm">
+          <div className="mx-auto h-7 w-7 animate-spin rounded-full border-2 border-gray-200 border-t-[var(--primary)]" />
+
+          <p className="mt-4 text-sm text-[var(--text-muted)]">
+            Loading orders...
+          </p>
+        </div>
+      )}
+
+      {/* Empty */}
+      {!loading && orders.length === 0 && (
+        <div className="rounded-2xl border border-[var(--border-light)] bg-white px-5 py-20 text-center shadow-sm sm:px-6">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background-soft)]">
+            <Package className="h-5 w-5 text-[var(--text-muted)]" />
+          </div>
+
+          <h2 className="mt-4 text-base font-semibold text-[var(--dark)]">
+            No orders yet
+          </h2>
+
+          <p className="mx-auto mt-1 max-w-sm text-sm leading-6 text-[var(--text-muted)]">
+            Customer orders will appear here when they are placed.
+          </p>
+        </div>
+      )}
+
+      {/* No filtered results */}
+      {!loading &&
+        orders.length > 0 &&
+        filteredOrders.length === 0 && (
+          <div className="rounded-2xl border border-[var(--border-light)] bg-white px-5 py-16 text-center shadow-sm sm:px-6">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background-soft)]">
+              <Search className="h-5 w-5 text-[var(--text-muted)]" />
+            </div>
+
+            <h2 className="mt-4 text-base font-semibold text-[var(--dark)]">
+              No matching orders
             </h2>
 
-            <p className="mt-1 max-w-2xl text-[12px] leading-5 text-[var(--text-muted)] sm:text-sm sm:leading-normal">
-              Your catalog is ready and orders are managed from the admin panel.
+            <p className="mx-auto mt-1 max-w-sm text-sm leading-6 text-[var(--text-muted)]">
+              Try changing your search or status filter.
             </p>
-          </div>
 
-          <div className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--background-soft)] sm:flex">
-            <ShoppingBag className="h-5 w-5 text-[var(--primary)]" />
+            {(search || statusFilter !== "all") && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearch("");
+                  setStatusFilter("all");
+                }}
+                className="mt-4 text-sm font-semibold text-[var(--primary)] hover:underline"
+              >
+                Clear filters
+              </button>
+            )}
           </div>
+        )}
+
+      {/* Orders */}
+      {!loading && filteredOrders.length > 0 && (
+        <div className="w-full min-w-0 space-y-6">
+          {filteredOrders.map((order) => (
+            <article
+              key={order.id}
+              className={`
+                w-full min-w-0 overflow-hidden rounded-2xl
+                border border-[var(--border-light)]
+                bg-white shadow-sm
+                transition-all duration-300 ease-out
+                hover:shadow-md
+                ${
+                  animatingId === order.id
+                    ? "ring-2 ring-[var(--primary)]/15 shadow-md"
+                    : ""
+                }
+              `}
+            >
+              {/* Order Header */}
+              <div className="border-b border-[var(--border-light)] px-5 py-5 sm:px-6 sm:py-5">
+                <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0">
+                    <div className="flex min-w-0 items-center gap-2.5">
+                      <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-[var(--primary)] sm:text-xs">
+                        Order
+                      </span>
+
+                      <span className="h-1 w-1 shrink-0 rounded-full bg-gray-300" />
+
+                      <span className="min-w-0 truncate font-mono text-xs font-semibold text-[var(--dark)] sm:text-sm">
+                        #{order.id}
+                      </span>
+                    </div>
+
+                    <p className="mt-2 text-[11px] text-[var(--text-muted)] sm:text-xs">
+                      {formatDate(order.createdAt)}
+                    </p>
+                  </div>
+
+                  {/* Status */}
+                  <div className="flex w-full items-center gap-2.5 sm:w-auto">
+                    {/* Animated Status Badge */}
+                    <span
+                      className={`
+                        inline-flex shrink-0 items-center gap-1.5
+                        rounded-full border px-2.5 py-1.5
+                        text-[10px] font-semibold capitalize
+                        sm:px-3 sm:text-xs
+                        transition-all duration-300 ease-out
+                        ${
+                          statusStyles[order.status]
+                        }
+                        ${
+                          animatingId === order.id
+                            ? "scale-105 shadow-sm"
+                            : "scale-100"
+                        }
+                      `}
+                    >
+                      <span
+                        key={`${order.id}-${order.status}-icon`}
+                        className="animate-status-icon inline-flex"
+                      >
+                        {getStatusIcon(order.status)}
+                      </span>
+
+                      <span
+                        key={`${order.id}-${order.status}-text`}
+                        className="animate-status-text"
+                      >
+                        {order.status}
+                      </span>
+                    </span>
+
+                    <select
+                      value={order.status}
+                      disabled={updatingId === order.id}
+                      onChange={(event) =>
+                        handleStatusChange(
+                          order.id,
+                          event.target.value as Order["status"],
+                        )
+                      }
+                      className="h-9 min-w-0 flex-1 rounded-lg border border-[var(--border-light)] bg-white px-3 text-xs font-medium text-[var(--dark)] outline-none transition-all duration-200 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 disabled:cursor-not-allowed disabled:opacity-50 sm:w-36 sm:flex-none sm:text-sm"
+                    >
+                      <option value="pending">
+                        Pending
+                      </option>
+
+                      <option value="confirmed">
+                        Confirmed
+                      </option>
+
+                      <option value="delivered">
+                        Delivered
+                      </option>
+
+                      <option value="cancelled">
+                        Cancelled
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Content */}
+              <div className="grid min-w-0 lg:grid-cols-[0.85fr_1.15fr]">
+                {/* Customer */}
+                <div className="min-w-0 border-b border-[var(--border-light)] p-5 sm:p-6 lg:border-b-0 lg:border-r">
+                  <p className="mb-5 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)] sm:text-xs">
+                    Customer
+                  </p>
+
+                  <div className="space-y-5">
+                    {/* Name */}
+                    <div className="flex min-w-0 gap-3.5">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--background-soft)]">
+                        <User className="h-4 w-4 text-[var(--text-muted)]" />
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="text-[10px] text-[var(--text-muted)] sm:text-xs">
+                          Name
+                        </p>
+
+                        <p className="mt-1 truncate text-sm font-semibold text-[var(--dark)]">
+                          {order.customer.name}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Phone */}
+                    <div className="flex min-w-0 gap-3.5">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--background-soft)]">
+                        <Phone className="h-4 w-4 text-[var(--text-muted)]" />
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="text-[10px] text-[var(--text-muted)] sm:text-xs">
+                          Phone
+                        </p>
+
+                        <p className="mt-1 truncate text-sm font-semibold text-[var(--dark)]">
+                          {order.customer.phone}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Address */}
+                    <div className="flex min-w-0 gap-3.5">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--background-soft)]">
+                        <MapPin className="h-4 w-4 text-[var(--text-muted)]" />
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="text-[10px] text-[var(--text-muted)] sm:text-xs">
+                          Delivery Address
+                        </p>
+
+                        <p className="mt-1 break-words text-sm font-medium leading-5 text-[var(--dark)]">
+                          {order.customer.address}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Items */}
+                <div className="min-w-0 p-5 sm:p-6">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)] sm:text-xs">
+                      Order Items
+                    </p>
+
+                    <span className="text-[10px] text-[var(--text-muted)] sm:text-xs">
+                      {order.items.length}{" "}
+                      {order.items.length === 1
+                        ? "item"
+                        : "items"}
+                    </span>
+                  </div>
+
+                  <div className="mt-4 space-y-3">
+                    {order.items.map((item) => (
+                      <div
+                        key={item.productId}
+                        className="flex min-w-0 items-center justify-between gap-4 rounded-xl border border-[var(--border-light)] bg-[var(--background-soft)] px-4 py-3.5 transition-colors duration-200 hover:bg-white sm:py-4"
+                      >
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-semibold text-[var(--dark)] sm:text-[15px]">
+                            {item.name}
+                          </p>
+
+                          <p className="mt-1 text-[11px] text-[var(--text-muted)] sm:text-xs">
+                            Quantity: {item.quantity}
+                          </p>
+                        </div>
+
+                        <p className="shrink-0 text-sm font-bold text-[var(--dark)] sm:text-[15px]">
+                          Rs.{" "}
+                          {(
+                            item.price * item.quantity
+                          ).toLocaleString("en-PK")}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Order Total */}
+                  <div className="mt-5 flex items-end justify-between gap-4 border-t border-[var(--border-light)] pt-5">
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-wide text-[var(--text-muted)] sm:text-xs">
+                        Payment
+                      </p>
+
+                      <p className="mt-1.5 text-sm font-semibold text-[var(--dark)]">
+                        Cash on Delivery
+                      </p>
+                    </div>
+
+                    <div className="text-right">
+                      <p className="text-[10px] font-medium uppercase tracking-wide text-[var(--text-muted)] sm:text-xs">
+                        Order Total
+                      </p>
+
+                      <p className="mt-1 text-lg font-bold text-[var(--navy)] sm:text-xl">
+                        Rs.{" "}
+                        {order.subtotal.toLocaleString("en-PK")}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
+      )}
 
-        <div className="mt-5 grid grid-cols-3 gap-3 border-t border-[var(--border-light)] pt-4 sm:mt-6 sm:gap-4 sm:pt-5">
+      {/* Status animation */}
+      <style jsx>{`
+        @keyframes statusIcon {
+          0% {
+            opacity: 0;
+            transform: scale(0.65) rotate(-10deg);
+          }
 
-          <div>
-            <p className="text-[10px] text-[var(--text-muted)] sm:text-xs">
-              Catalog
-            </p>
+          60% {
+            opacity: 1;
+            transform: scale(1.15) rotate(3deg);
+          }
 
-            <p className="mt-1 text-[13px] font-medium text-[var(--dark)] sm:text-sm">
-              {products.length} products
-            </p>
-          </div>
+          100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+          }
+        }
 
-          <div>
-            <p className="text-[10px] text-[var(--text-muted)] sm:text-xs">
-              Orders
-            </p>
+        @keyframes statusText {
+          0% {
+            opacity: 0;
+            transform: translateY(3px);
+          }
 
-            <p className="mt-1 text-[13px] font-medium text-[var(--dark)] sm:text-sm">
-              {orderCount ?? "—"} total
-            </p>
-          </div>
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-          <div>
-            <p className="text-[10px] text-[var(--text-muted)] sm:text-xs">
-              Pending
-            </p>
+        :global(.animate-status-icon) {
+          animation: statusIcon 350ms ease-out;
+        }
 
-            <p className="mt-1 text-[13px] font-medium text-[var(--dark)] sm:text-sm">
-              {pendingOrderCount ?? "—"} awaiting
-            </p>
-          </div>
+        :global(.animate-status-text) {
+          animation: statusText 300ms ease-out;
+        }
+      `}</style>
+    </div>
+  );
+}
 
-        </div>
-      </div>
+function SummaryCard({
+  label,
+  value,
+  valueClass = "text-[var(--dark)]",
+}: {
+  label: string;
+  value: number;
+  valueClass?: string;
+}) {
+  return (
+    <div className="rounded-xl border border-[var(--border-light)] bg-white px-4 py-4 shadow-sm sm:px-5 sm:py-4">
+      <p className="text-[11px] font-medium text-[var(--text-muted)] sm:text-xs">
+        {label}
+      </p>
 
+      <p
+        className={`mt-1 text-xl font-bold sm:text-2xl ${valueClass}`}
+      >
+        {value}
+      </p>
     </div>
   );
 }
