@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 import {
   signInWithEmailAndPassword,
@@ -39,7 +40,9 @@ export default function AdminLoginPage() {
         adminSnapshot.data().role !== "admin"
       ) {
         await signOut(auth);
-        setError("This account is not authorized to access the admin panel.");
+        setError(
+          "This account is not authorized to access the admin panel.",
+        );
         return;
       }
 
@@ -54,29 +57,28 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[var(--background-soft)] px-4">
+    <main className="flex min-h-screen items-center justify-center bg-[var(--background-soft)] px-4 py-8">
       <div className="w-full max-w-md rounded-2xl border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-md)] sm:p-8">
-
         {/* Header */}
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--primary-light)]">
-            <span className="text-xl font-bold text-[var(--primary)]">
-              J
-            </span>
+          <div className="mb-5 flex justify-center">
+            <Image
+              src="/logo.webp"
+              alt="Jaji Electronics"
+              width={240}
+              height={110}
+              className="h-24 w-auto object-contain"
+              priority
+            />
           </div>
 
-          <h1 className="text-2xl font-bold text-[var(--dark)]">
-            Jaji Electronics
-          </h1>
-
-          <p className="mt-1.5 text-sm text-[var(--text-muted)]">
+          <p className="text-sm text-[var(--text-muted)]">
             Admin Dashboard
           </p>
         </div>
 
         {/* Login Form */}
         <form onSubmit={handleLogin} className="space-y-5">
-
           {/* Email */}
           <div>
             <label

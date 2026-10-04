@@ -137,7 +137,7 @@ export default function AdminProductsPage() {
   }, [search, categoryFilter, brandFilter]);
 
   return (
-    <div className="w-full min-w-0 max-w-full space-y-5 overflow-x-hidden sm:space-y-6">
+    <div className="w-full min-w-0 max-w-full space-y-5 sm:space-y-6">
 
       {/* Header */}
       <div>

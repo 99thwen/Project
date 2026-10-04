@@ -262,6 +262,8 @@ export default function AdminOrdersPage() {
       )}
 
       {/* Empty */}
+
+
       {!loading && orders.length === 0 && (
         <div className="rounded-2xl border border-[var(--border-light)] bg-white px-5 py-20 text-center shadow-sm sm:px-6">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background-soft)]">
