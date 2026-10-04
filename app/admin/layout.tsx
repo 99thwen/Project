@@ -37,6 +37,9 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+if (pathname === "/admin/login") {
+  return <>{children}</>;
+}
 
   return (
     <AdminGuard>
@@ -46,33 +49,23 @@ export default function AdminLayout({
         <header className="sticky top-0 z-40 border-b border-[var(--border-light)] bg-white">
 
           <div className="flex h-[64px] items-center justify-between px-4 sm:h-[72px] sm:px-8">
+            
+<div className="mb-8 text-center">
+  <div className="mb-6 flex justify-center">
+    <Image
+      src="/logo.webp"
+      alt="Jaji Electronics"
+      width={240}
+      height={110}
+      className="h-24 w-auto object-contain"
+      priority
+    />
+  </div>
 
-            {/* Logo */}
-            <Link
-              href="/admin"
-              className="flex items-center"
-              aria-label="Jaji Electronics Admin"
-            >
-              <Image
-                src="/logo.webp"
-                alt="Jaji Electronics"
-                width={110}
-                height={50}
-                className="h-10 w-auto object-contain sm:h-11"
-                priority
-              />
-
-              <div className="ml-3 hidden border-l border-[var(--border-light)] pl-3 sm:block">
-                <p className="text-sm font-semibold text-[var(--dark)]">
-                  Admin Panel
-                </p>
-
-                <p className="text-xs text-[var(--text-muted)]">
-                  Jaji Electronics
-                </p>
-              </div>
-            </Link>
-
+  <p className="text-sm text-[var(--text-muted)]">
+    Admin Dashboard
+  </p>
+</div>
             {/* View Store */}
             <Link
               href="/"
