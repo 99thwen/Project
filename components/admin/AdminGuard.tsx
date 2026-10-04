@@ -2,7 +2,7 @@
 
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { auth, db } from "@/lib/firebase";
@@ -13,12 +13,20 @@ export default function AdminGuard({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
 
   const [checking, setChecking] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     let mounted = true;
+
+    // Login page should not be protected by the admin guard
+    if (pathname === "/admin/login") {
+      setChecking(false);
+      setAuthenticated(true);
+      return;
+    }
 
     const unsubscribe = onAuthStateChanged(
       auth,
@@ -76,7 +84,7 @@ export default function AdminGuard({
       mounted = false;
       unsubscribe();
     };
-  }, [router]);
+  }, [pathname, router]);
 
   if (checking) {
     return (
