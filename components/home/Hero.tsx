@@ -45,7 +45,7 @@ export default function Hero() {
       {/* Mobile Image */}
       <div className="relative h-[260px] overflow-hidden sm:h-[340px] lg:hidden">
         <Image
-          src="/images/public.webp"
+          src="/images/general.webp"
           alt="Jaji Home lifestyle"
           fill
           priority

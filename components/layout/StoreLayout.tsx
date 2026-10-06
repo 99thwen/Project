@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PageTransition from "@/components/layout/PageTransition";
 
 interface StoreLayoutProps {
   children: React.ReactNode;
@@ -11,8 +12,9 @@ export default function StoreLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+
       <main className="flex-1">
-        {children}
+        <PageTransition>{children}</PageTransition>
       </main>
 
       <Footer />

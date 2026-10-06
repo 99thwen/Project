@@ -5,13 +5,12 @@ import { brands } from "@/data/brands";
 export default function BrandSection() {
 
   return (
-
-    <section className="section-padding bg-[var(--background-soft)]">
-
+      <section
+        id="shop-by-brand"
+        className="section-padding bg-[var(--background-soft)] scroll-mt-24"
+      >
       <div className="container-main">
-
         {/* Section Header */}
-
         <div className="mb-8 flex items-end justify-between gap-4">
 
           <div>
