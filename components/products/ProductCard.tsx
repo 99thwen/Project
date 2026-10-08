@@ -30,14 +30,11 @@ export default function ProductCard({
   );
   return (
     <article
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white
-        rounded-2xl border border-[var(--border)]
-        bg-white
-        transition-all duration-300 ease-out
-        hover:-translate-y-1
-        hover:border-[var(--primary)]/30
-        hover:shadow-[var(--shadow-md)]
-      "
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-white
+  transition-all duration-300 ease-out
+  hover:-translate-y-1
+  hover:border-[var(--primary)]/30
+  hover:shadow-[var(--shadow-md)]"
     >
       {/* PRODUCT IMAGE */}
       <Link

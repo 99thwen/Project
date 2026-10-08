@@ -172,16 +172,9 @@ export default function Footer() {
   <FaInstagram className="h-4 w-4" />
 </a>
 
+   
     <a
-      href="#"
-      aria-label="YouTube"
-      className="flex h-9 w-9 items-center justify-center rounded-full bg-white !text-[#222222] transition-opacity hover:opacity-80"
-    >
-      <FaYoutube className="h-4 w-4" />
-    </a>
-
-    <a
-      href="#"
+      href="https://www.tiktok.com/@jajielectronics"
       aria-label="TikTok"
       className="flex h-9 w-9 items-center justify-center rounded-full bg-white !text-[#222222] transition-opacity hover:opacity-80"
     >

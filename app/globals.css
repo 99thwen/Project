@@ -532,14 +532,6 @@ select {
   transform: rotate(180deg);
 }
 
-/* =========================================================
-   CARD HOVER
-   ========================================================= */
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
 
 /* =========================================================
    REDUCED MOTION
@@ -608,23 +600,5 @@ select {
 
   h2 {
     letter-spacing: -0.02em;
-  }
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }

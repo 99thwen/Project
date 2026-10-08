@@ -1508,7 +1508,95 @@ specifications: {
   },
 ]
 },
-
+{
+  id: "super-asia-meh-30",
+  name: "MEH-30 Mega Series",
+  slug: "super-asia-meh-30-mega-series",
+  categoryId: "electric-geyser",
+  brandId: "super-asia",
+  price: 39000,
+  image: "/products/superasia/meh30.webp",
+  images: [
+    "/products/superasia/meh30.webp",
+  ],
+  model: "MEH-30",
+  description:
+    "The Super Asia MEH-30 Mega Series is a 30-liter electric water heater designed with multiple safety and durability features. It comes with a temperature gauge, thicker magnesium anode, anti dry-heating protection, overheat protection, safety valve, sapphire enamel tank, enamel coated heating element, polyurethane foam insulation, ELCB protection, IPX4 waterproof protection, and earthing protection.",
+  features: [
+    "30-liter capacity",
+    "Temperature gauge",
+    "Thicker magnesium anode",
+    "Anti dry-heating protection",
+    "Overheat protection",
+    "Safety valve",
+    "Sapphire enamel tank",
+    "Enamel coated heating element",
+    "Overall polyurethane foam insulation",
+    "ELCB protection",
+    "Waterproof grade IPX4",
+    "Earthing protection",
+  ],
+  specifications: {
+    capacity: "30 Liters",
+    netWeight: "14.45 kg",
+    grossWeight: "16.25 kg",
+    productDimensions: "Diameter: 340 mm, Height: 580 mm",
+    diameter: "340 mm",
+    height: "580 mm",
+  },
+  faqs: [
+    {
+      question: "What is the capacity of the Super Asia MEH-30?",
+      answer:
+        "The Super Asia MEH-30 has a water capacity of 30 liters.",
+    },
+    {
+      question: "What safety features does the MEH-30 have?",
+      answer:
+        "The MEH-30 features anti dry-heating protection, overheat protection, a safety valve, ELCB protection, IPX4 waterproof protection, and earthing protection.",
+    },
+    {
+      question: "Does the MEH-30 have a temperature gauge?",
+      answer:
+        "Yes, the MEH-30 is equipped with a temperature gauge.",
+    },
+    {
+      question: "What type of tank does the MEH-30 use?",
+      answer:
+        "The MEH-30 features a sapphire enamel tank.",
+    },
+    {
+      question: "Does the MEH-30 have an enamel coated heating element?",
+      answer:
+        "Yes, the MEH-30 comes with an enamel coated heating element.",
+    },
+    {
+      question: "What type of insulation does the MEH-30 have?",
+      answer:
+        "The MEH-30 uses overall polyurethane foam insulation.",
+    },
+    {
+      question: "What is the net weight of the MEH-30?",
+      answer:
+        "The net weight of the MEH-30 is 14.45 kg.",
+    },
+    {
+      question: "What is the gross weight of the MEH-30?",
+      answer:
+        "The gross weight of the MEH-30 is 16.25 kg.",
+    },
+    {
+      question: "What are the dimensions of the MEH-30?",
+      answer:
+        "The MEH-30 has a diameter of 340 mm and a height of 580 mm.",
+    },
+    {
+      question: "What is the price of the Super Asia MEH-30?",
+      answer:
+        "The listed price of the Super Asia MEH-30 Mega Series is Rs. 39,000.",
+    },
+  ],
+},
 {
   id: "super-asia-meh-50",
   name: "Super Asia MEH-50 Mega Series Electric Water Heater",
@@ -1592,7 +1680,240 @@ faqs: [
   },
 ],
 },
-
+{
+  id: "super-asia-meh-80",
+  name: "MEH-80 Mega Series",
+  slug: "super-asia-meh-80-mega-series",
+  categoryId: "electric-geyser",
+  brandId: "super-asia",
+  price: 56000,
+  image: "/products/superasia/meh80.webp",
+  images: [
+    "/products/superasia/meh80.webp",
+  ],
+  model: "MEH-80",
+  description:
+    "The Super Asia MEH-80 Mega Series is an 80-liter electric water heater featuring a temperature gauge, thicker magnesium anode, anti dry-heating protection, overheat protection, safety valve, sapphire enamel tank, enamel coated heating element, overall polyurethane foam insulation, ELCB protection, IPX4 waterproof protection, and earthing protection.",
+  features: [
+    "80-liter capacity",
+    "Temperature gauge",
+    "Thicker magnesium anode",
+    "Anti dry-heating protection",
+    "Overheat protection",
+    "Safety valve",
+    "Sapphire enamel tank",
+    "Enamel coated heating element",
+    "Overall polyurethane foam insulation",
+    "ELCB protection",
+    "Waterproof grade IPX4",
+    "Earthing protection",
+  ],
+  specifications: {
+    capacity: "80 Liters",
+    netWeight: "24.30 kg",
+    grossWeight: "27.85 kg",
+    productDimensions: "Diameter: 450 mm, Height: 745 mm",
+    diameter: "450 mm",
+    height: "745 mm",
+  },
+  faqs: [
+    {
+      question: "What is the capacity of the Super Asia MEH-80?",
+      answer: "The Super Asia MEH-80 has a capacity of 80 liters.",
+    },
+    {
+      question: "What safety features does the MEH-80 have?",
+      answer:
+        "The MEH-80 has anti dry-heating protection, overheat protection, a safety valve, ELCB protection, IPX4 waterproof protection, and earthing protection.",
+    },
+    {
+      question: "Does the MEH-80 have a temperature gauge?",
+      answer: "Yes, the MEH-80 comes with a temperature gauge.",
+    },
+    {
+      question: "What type of tank does the MEH-80 have?",
+      answer: "The MEH-80 features a sapphire enamel tank.",
+    },
+    {
+      question: "What type of heating element does the MEH-80 use?",
+      answer: "The MEH-80 has an enamel coated heating element.",
+    },
+    {
+      question: "What type of insulation does the MEH-80 have?",
+      answer: "The MEH-80 uses overall polyurethane foam insulation.",
+    },
+    {
+      question: "What is the net weight of the MEH-80?",
+      answer: "The net weight of the MEH-80 is 24.30 kg.",
+    },
+    {
+      question: "What is the gross weight of the MEH-80?",
+      answer: "The gross weight of the MEH-80 is 27.85 kg.",
+    },
+    {
+      question: "What are the dimensions of the MEH-80?",
+      answer:
+        "The MEH-80 has a diameter of 450 mm and a height of 745 mm.",
+    },
+    {
+      question: "What is the price of the Super Asia MEH-80?",
+      answer: "The listed price of the Super Asia MEH-80 is Rs. 56,000.",
+    },
+  ],
+},
+{
+  id: "super-asia-meh-100",
+  name: "MEH-100 Mega Series",
+  slug: "super-asia-meh-100-mega-series",
+  categoryId: "electric-geyser",
+  brandId: "super-asia",
+  price: 61000,
+  image: "/products/superasia/meh100.webp",
+  images: [
+    "/products/superasia/meh100.webp",
+  ],
+  model: "MEH-100",
+  description:
+    "The Super Asia MEH-100 Mega Series is a 100-liter electric water heater featuring a temperature gauge, thicker magnesium anode, anti dry-heating protection, overheat protection, safety valve, sapphire enamel tank, enamel coated heating element, overall polyurethane foam insulation, ELCB protection, IPX4 waterproof protection, and earthing protection.",
+  features: [
+    "100-liter capacity",
+    "Temperature gauge",
+    "Thicker magnesium anode",
+    "Anti dry-heating protection",
+    "Overheat protection",
+    "Safety valve",
+    "Sapphire enamel tank",
+    "Enamel coated heating element",
+    "Overall polyurethane foam insulation",
+    "ELCB protection",
+    "Waterproof grade IPX4",
+    "Earthing protection",
+  ],
+  specifications: {
+    capacity: "100 Liters",
+    netWeight: "28.10 kg",
+    grossWeight: "32.55 kg",
+    productDimensions: "Diameter: 450 mm, Height: 895 mm",
+    diameter: "450 mm",
+    height: "895 mm",
+  },
+  faqs: [
+    {
+      question: "What is the capacity of the Super Asia MEH-100?",
+      answer: "The Super Asia MEH-100 has a capacity of 100 liters.",
+    },
+    {
+      question: "What safety features does the MEH-100 have?",
+      answer:
+        "The MEH-100 has anti dry-heating protection, overheat protection, a safety valve, ELCB protection, IPX4 waterproof protection, and earthing protection.",
+    },
+    {
+      question: "Does the MEH-100 have a temperature gauge?",
+      answer: "Yes, the MEH-100 comes with a temperature gauge.",
+    },
+    {
+      question: "What type of tank does the MEH-100 have?",
+      answer: "The MEH-100 features a sapphire enamel tank.",
+    },
+    {
+      question: "What type of heating element does the MEH-100 use?",
+      answer: "The MEH-100 has an enamel coated heating element.",
+    },
+    {
+      question: "What type of insulation does the MEH-100 have?",
+      answer: "The MEH-100 uses overall polyurethane foam insulation.",
+    },
+    {
+      question: "What is the net weight of the MEH-100?",
+      answer: "The net weight of the MEH-100 is 28.10 kg.",
+    },
+    {
+      question: "What is the gross weight of the MEH-100?",
+      answer: "The gross weight of the MEH-100 is 32.55 kg.",
+    },
+    {
+      question: "What are the dimensions of the MEH-100?",
+      answer:
+        "The MEH-100 has a diameter of 450 mm and a height of 895 mm.",
+    },
+    {
+      question: "What is the price of the Super Asia MEH-100?",
+      answer: "The listed price of the Super Asia MEH-100 is Rs. 61,000.",
+    },
+  ],
+},
+{
+  id: "super-asia-reh-10",
+  name: "REH-10 Rapid Series",
+  slug: "super-asia-reh-10-rapid-series",
+  categoryId: "electric-geyser",
+  brandId: "super-asia",
+  price: 27000,
+  image: "/products/superasia/reh10.webp",
+  images: [
+    "/products/superasia/reh10.webp",
+  ],
+  model: "REH-10",
+  description:
+    "The Super Asia REH-10 Rapid Series is a 10-liter electric water heater featuring an enamel coated tank, enamel coated heating element, longer lifetime magnesium rod, dry heat protection, overheat protection, maximum working pressure protection, earthing protection, and IPX4 waterproof protection.",
+  features: [
+    "10-liter capacity",
+    "Enamel coated tank",
+    "Enamel coated heating element",
+    "Longer lifetime magnesium rod",
+    "Dry heat protection",
+    "Overheat protection",
+    "Maximum working pressure protection",
+    "Earthing protection",
+    "Waterproof grade IPX4",
+  ],
+  specifications: {
+    capacity: "10 Liters",
+    netWeight: "7.4 kg",
+    grossWeight: "8.4 kg",
+    productDimensions: "324 × 324 × 315 mm",
+  },
+  faqs: [
+    {
+      question: "What is the capacity of the Super Asia REH-10?",
+      answer: "The Super Asia REH-10 has a capacity of 10 liters.",
+    },
+    {
+      question: "What safety features does the REH-10 have?",
+      answer:
+        "The REH-10 has dry heat protection, overheat protection, maximum working pressure protection, earthing protection, and IPX4 waterproof protection.",
+    },
+    {
+      question: "What type of tank does the REH-10 have?",
+      answer: "The REH-10 features an enamel coated tank.",
+    },
+    {
+      question: "What type of heating element does the REH-10 use?",
+      answer: "The REH-10 has an enamel coated heating element.",
+    },
+    {
+      question: "Does the REH-10 have a magnesium rod?",
+      answer:
+        "Yes, the REH-10 features a longer lifetime magnesium rod.",
+    },
+    {
+      question: "What is the net weight of the REH-10?",
+      answer: "The net weight of the REH-10 is 7.4 kg.",
+    },
+    {
+      question: "What is the gross weight of the REH-10?",
+      answer: "The gross weight of the REH-10 is 8.4 kg.",
+    },
+    {
+      question: "What are the dimensions of the REH-10?",
+      answer: "The REH-10 measures 324 × 324 × 315 mm.",
+    },
+    {
+      question: "What is the price of the Super Asia REH-10?",
+      answer: "The listed price of the Super Asia REH-10 is Rs. 27,000.",
+    },
+  ],
+},
 {
   id: "super-asia-eh-630",
   name: "Super Asia EH-630 Smart Series Electric Water Heater",
@@ -1988,6 +2309,1885 @@ faqs: [
 // ─────────────────────────────────────────
 // AIR COOLERS
 // ─────────────────────────────────────────
+{
+  id: "super-asia-ecm-3500-plus-smart-cool",
+  name: "Super Asia ECM-3500 Plus Smart Cool",
+  slug: "super-asia-ecm-3500-plus-smart-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 23000,
+  image: "/products/superasia/aircooler1.webp",
+    images: [
+    "/products/superasia/aircooler1.webp",
+    "/products/superasia/aircooler2.webp",
+  ],
+  model: "ECM-3500 PLUS SMART COOL",
+  description:
+    "Super Asia ECM-3500 Plus Smart Cool air cooler with a 35-liter water tank, powerful air delivery, honeycomb cooling pads, and efficient room cooling.",
+  features: [
+    "35-liter water tank",
+    "Powerful air delivery",
+    "Honeycomb cooling pads",
+    "Top-loading cooling box",
+    "4 re-freezable ice packs included",
+    "Powerful and energy-efficient motor",
+    "Three-sided anti-bacterial honeycomb pads",
+    "Auto swing for uniform cooling",
+    "Two-speed fan control",
+    "Shock and rust-proof plastic body",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "35 Liters",
+    "Product Dimensions": "550 x 450 x 900 mm",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+    "Fan Speed": "2-speed",
+    "Body": "Shock and rust-proof plastic",
+  },
+  faqs: [
+    {
+      question: "What is the model of this air cooler?",
+      answer: "The model is Super Asia ECM-3500 Plus Smart Cool.",
+    },
+    {
+      question: "What is the water tank capacity?",
+      answer: "The Super Asia ECM-3500 Plus Smart Cool has a 35-liter water tank.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 4 re-freezable ice packs are included for additional cooling.",
+    },
+    {
+      question: "What are the dimensions of the air cooler?",
+      answer: "The product dimensions are 550 x 450 x 900 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4600-auto-ac-dc-inverter-easy-cool",
+  name: "Super Asia ECM 4600 Auto AC/DC Inverter Easy Cool",
+  slug: "super-asia-ecm-4600-auto-ac-dc-inverter-easy-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 29800,
+  image: "/products/superasia/airc1.webp",
+  images: [
+    "/products/superasia/airc1.webp",
+    "/products/superasia/airc2.webp",
+    "/products/superasia/airc3.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM 4600 AUTO AC/DC INVERTER EASY COOL",
+  description:
+    "Super Asia ECM 4600 Auto AC/DC Inverter Easy Cool air cooler with a 50-liter water tank, BLDC inverter motor, smart touch controls, and powerful energy-efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Special BLDC motor",
+    "AC/DC inverter operation",
+    "Constant motor RPM from 150V to 240V",
+    "Smooth and noise-free motor",
+    "Powerful and energy-efficient inverter motor",
+    "Multi-speed controller",
+    "Smart touch control panel",
+    "6 re-freezable ice packs",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Powerful air throw with auto swing",
+    "Fan-based cooling",
+    "Memory function for previous settings",
+    "Multi-speed fan control",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "AC-220V, DC-12V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Colors": "White, Black",
+    "Motor": "BLDC Inverter Motor",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM 4600 Auto AC/DC Inverter Easy Cool has a 50-liter water tank.",
+    },
+    {
+      question: "Is this air cooler an inverter model?",
+      answer:
+        "Yes, it features a powerful energy-efficient AC/DC inverter BLDC motor.",
+    },
+    {
+      question: "What voltage does it support?",
+      answer:
+        "It supports AC-220V and DC-12V operation.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+    {
+      question: "What colors are available?",
+      answer:
+        "The air cooler is available in White and Black.",
+    },
+  ],
+},
+
+{
+  id: "super-asia-ecm-4600-plus-dc11",
+  name: "Super Asia ECM-4600 Plus DC Easy Cool",
+  slug: "super-asia-ecm-4600-plus-dc11",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 22800,
+  image: "/products/superasia/airc2.webp",
+  images: [
+    "/products/superasia/airc2.webp",
+    "/products/superasia/airc1.webp",
+    "/products/superasia/airc3.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM-4600 PLUS DC EASY COOL",
+  description:
+    "Super Asia ECM-4600 Plus DC Easy Cool air cooler with a 50-liter water tank, powerful air throw, honeycomb cooling pads, and efficient DC cooling.",
+  features: [
+    "50-liter water tank",
+    "DC-12V operation",
+    "Solar compatible",
+    "6 re-freezable ice packs",
+    "Powerful and energy-efficient motor",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Fan-based cooling",
+    "Powerful air throw with auto swing",
+    "Memory function",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Strong four-way movement wheels",
+    "Low maintenance and long-lasting design",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Power Supply": "DC-12V / Solar",
+    "Net Weight": "24 kg",
+    "Gross Weight": "27 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Colors": "White, Black",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4600 Plus DC Easy Cool has a 50-liter water tank.",
+    },
+    {
+      question: "Does this air cooler work on AC electricity?",
+      answer:
+        "No. It is designed to work on DC-12V and solar power supplies only.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "What type of cooling pads does it use?",
+      answer:
+        "It uses high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+    {
+      question: "What colors are available?",
+      answer:
+        "The air cooler is available in White and Black.",
+    },
+  ],
+},
+
+{
+  id: "super-asia-ecm-5500-auto-inverter-jet-cool-black",
+  name: "Super Asia ECM-5500 Auto Inverter Jet Cool Black",
+  slug: "super-asia-ecm-5500-auto-inverter-jet-cool-black",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 44100,
+  image: "/products/superasia/black1.webp",
+  images: [
+    "/products/superasia/black1.webp",
+    "/products/superasia/black2.webp",
+    "/products/superasia/black3.webp",
+    "/products/superasia/black4.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM-5500 AUTO INVERTER JET COOL (BLACK)",
+  description:
+    "Super Asia ECM-5500 Auto Inverter Jet Cool Black air cooler with a 60-liter water tank, powerful BLDC electronic motor, smart controls, and energy-efficient cooling.",
+  features: [
+    "60-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "System restore function",
+    "Auto-off timer",
+    "Smart touch control panel",
+  ],
+  specifications: {
+    "Water Tank Capacity": "60 Liters",
+    "Rated Voltage": "150-270V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "810 x 630 x 1140 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-5500 Auto Inverter Jet Cool has a 60-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic inverter motor designed for energy-efficient operation.",
+    },
+    {
+      question: "How energy efficient is the motor?",
+      answer:
+        "The BLDC electronic motor is designed to provide up to 60% energy efficiency.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, the air cooler features an auto swing function for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 810 x 630 x 1140 mm.",
+    },
+  ],
+},
+
+{
+  id: "super-asia-ecm-7000-plus-turbo-cool",
+  name: "Super Asia ECM-7000 Plus Turbo Cool",
+  slug: "super-asia-ecm-7000-plus-turbo-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 31500,
+  image: "/products/superasia/7000a.webp",
+  images: [
+    "/products/superasia/7000a.webp",
+    "/products/superasia/7000b.webp",
+    "/products/superasia/7000c.webp",
+    "/products/superasia/7000d.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM-7000 PLUS TURBO COOL",
+  description:
+    "Super Asia ECM-7000 Plus Turbo Cool air cooler with an 80-liter water tank, powerful air throw, anti-bacterial honeycomb cooling pads, and energy-efficient cooling.",
+  features: [
+    "80-liter large water tank",
+    "Auto swing",
+    "Anti-bacterial honeycomb cooling pads",
+    "Powerful air throw",
+    "Energy efficient",
+    "Continuous water supply",
+    "Top-loading cooling box",
+    "4 re-freezable ice packs",
+  ],
+  specifications: {
+    "Water Tank Capacity": "80 Liters",
+    "Net Weight": "23 kg",
+    "Gross Weight": "27 kg",
+    "Product Dimensions": "650 x 570 x 1200 mm",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-7000 Plus Turbo Cool has an 80-liter water tank.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, the air cooler features an auto swing function for wider air distribution.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 4 re-freezable ice packs are included.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 650 x 570 x 1200 mm.",
+    },
+  ],
+},
+
+{
+  id: "super-asia-ecm-9000-plus-inverter-thunder-cool",
+  name: "Super Asia ECM-9000 Plus Inverter Thunder Cool",
+  slug: "super-asia-ecm-9000-plus-inverter-thunder-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 47000,
+  image: "/products/superasia/thunder1.webp",
+  images: [
+    "/products/superasia/thunder1.webp",
+    "/products/superasia/thunder2.webp",
+    "/products/superasia/thunder3.webp",
+    "/products/superasia/airc3.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM-9000 PLUS INVERTER THUNDER COOL",
+  description:
+    "Super Asia ECM-9000 Plus Inverter Thunder Cool air cooler with a 100-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "100-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "100 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "34 kg",
+    "Gross Weight": "39 kg",
+    "Product Dimensions": "863 x 635 x 1333 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-9000 Plus Inverter Thunder Cool has a 100-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient operation.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM-9000 Plus Inverter Thunder Cool operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 863 x 635 x 1333 mm.",
+    },
+  ],
+},
+
+{
+  id: "super-asia-ecm-4500-plus-dc-super-cool",
+  name: "Super Asia ECM-4500 Plus DC Super Cool",
+  slug: "super-asia-ecm-4500-plus-dc-super-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 21600,
+  image: "/products/superasia/ecm1.webp",
+  images: [
+    "/products/superasia/ecm1.webp",
+    "/products/superasia/ecm2.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-4500 PLUS DC SUPER COOL",
+  description:
+    "Super Asia ECM-4500 Plus DC Super Cool air cooler with a 50-liter water tank, powerful airflow, energy-efficient cooling, and three-sided anti-bacterial honeycomb cooling pads.",
+  features: [
+    "50-liter water tank",
+    "Solar and DC-12V operation",
+    "Powerful and energy-efficient motor",
+    "Top-loading cooling box",
+    "6 re-freezable ice packs",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Powerful air throw with auto swing",
+    "Fan-based cooling",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Low maintenance and long-lasting design",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Power Supply": "DC-12V / Solar",
+    "Net Weight": "24 kg",
+    "Gross Weight": "27 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4500 Plus DC Super Cool has a 50-liter water tank.",
+    },
+    {
+      question: "What power supply does it use?",
+      answer:
+        "It works on solar and DC-12V power supplies only and does not operate on AC-220V electricity.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features powerful air throw with auto swing for uniform cooling.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4600-plus-inverter-easy-cool",
+  name: "Super Asia ECM-4600 Plus Inverter Easy Cool",
+  slug: "super-asia-ecm-4600-plus-inverter-easy-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 35700,
+  image: "/products/superasia/invert1.webp",
+  images: [
+    "/products/superasia/invert1.webp",
+    "/products/superasia/invert2.webp",
+    "/products/superasia/invert4.webp",
+    "/products/superasia/airc3.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-4600 PLUS INVERTER EASY COOL",
+  description:
+    "Super Asia ECM-4600 Plus Inverter Easy Cool air cooler with a 50-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Colors": "White, Black",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4600 Plus Inverter Easy Cool has a 50-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient operation.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM-4600 Plus Inverter Easy Cool operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-6500-plus-inverter-fast-cool",
+  name: "Super Asia ECM-6500 Plus Inverter Fast Cool",
+  slug: "super-asia-ecm-6500-plus-inverter-fast-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 45600,
+  image: "/products/superasia/5500a.webp",
+  images: [
+    "/products/superasia/5500a.webp",
+    "/products/superasia/5500b.webp",
+    "/products/superasia/5500c.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-6500 PLUS INVERTER FAST COOL",
+  description:
+    "Super Asia ECM-6500 Plus Inverter Fast Cool air cooler with a 70-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "70-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "70 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "33 kg",
+    "Gross Weight": "36 kg",
+    "Product Dimensions": "825 x 570 x 1200 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-6500 Plus Inverter Fast Cool has a 70-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient operation.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM-6500 Plus Inverter Fast Cool operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 825 x 570 x 1200 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4700-auto-ac-dc-inverter-cool-master",
+  name: "Super Asia ECM-4700 Auto AC/DC Inverter Cool Master",
+  slug: "super-asia-ecm-4700-auto-ac-dc-inverter-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 30300,
+  image: "/products/superasia/cool1.webp",
+  images: [
+    "/products/superasia/cool1.webp",
+    "/products/superasia/cool2.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM 4700 AUTO AC/DC INVERTER COOL MASTER",
+  description:
+    "Super Asia ECM 4700 Auto AC/DC Inverter Cool Master air cooler with a 50-liter water tank, BLDC inverter motor, AC/DC operation, smart touch controls, and efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Special BLDC motor",
+    "AC-220V and DC-12V operation",
+    "Constant motor RPM from 150V to 240V",
+    "Smooth and noise-free motor",
+    "Powerful and energy-efficient inverter motor",
+    "Multi-speed controller",
+    "Smart touch control panel",
+    "6 re-freezable ice packs",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Powerful air throw with auto swing",
+    "Fan-based cooling",
+    "Memory function",
+    "Multi-speed fan control",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "AC-220V, DC-12V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Motor": "BLDC Inverter Motor",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM 4700 Auto AC/DC Inverter Cool Master has a 50-liter water tank.",
+    },
+    {
+      question: "Does it support both AC and DC power?",
+      answer:
+        "Yes, it supports AC-220V and DC-12V operation.",
+    },
+    {
+      question: "What type of motor does it use?",
+      answer:
+        "It uses a special BLDC inverter motor designed for energy-efficient operation.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4700-plus-inverter-cool-master",
+  name: "Super Asia ECM-4700 Plus Inverter Cool Master",
+  slug: "super-asia-ecm-4700-plus-inverter-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 36200,
+  image: "/products/superasia/invert1.webp",
+  images: [
+    "/products/superasia/invert1.webp",
+    "/products/superasia/invert2.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-4700 PLUS INVERTER COOL MASTER",
+  description:
+    "Super Asia ECM-4700 Plus Inverter Cool Master air cooler with a 50-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4700 Plus Inverter Cool Master has a 50-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient operation.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM-4700 Plus Inverter Cool Master operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4700-plus-dc-cool-master",
+  name: "Super Asia ECM-4700 Plus DC Cool Master",
+  slug: "super-asia-ecm-4700-plus-dc-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 23300,
+  image: "/products/superasia/cool1.webp",
+  images: [
+    "/products/superasia/cool1.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM 4700 PLUS DC COOL MASTER",
+  description:
+    "Super Asia ECM 4700 Plus DC Cool Master air cooler with a 50-liter water tank, powerful air throw, smart controller, and energy-efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Solar and DC-12V operation",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+    "Auto-off timer",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "DC-12V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM 4700 Plus DC Cool Master has a 50-liter water tank.",
+    },
+    {
+      question: "What power supply does it use?",
+      answer:
+        "It works on solar and DC-12V power supplies only and does not operate on electricity or AC-220V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-5000-plus-inverter-cool-master",
+  name: "Super Asia ECM-5000 Plus Inverter Cool Master",
+  slug: "super-asia-ecm-5000-plus-inverter-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 41600,
+  image: "/products/superasia/1a.webp",
+  images: [
+    "/products/superasia/1a.webp",
+    "/products/superasia/1b.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-5000 PLUS INVERTER COOL MASTER",
+  description:
+    "Super Asia ECM-5000 Plus Inverter Cool Master air cooler with a 60-liter water tank, special BLDC motor, energy-efficient inverter technology, and smooth noise-free operation.",
+  features: [
+    "60-liter water tank",
+    "60% energy saving",
+    "Special BLDC motor",
+    "Constant motor RPM during voltage fluctuations",
+    "Smooth and noise-free motor",
+    "Power consumption of 330W",
+    "Energy-efficient inverter motor",
+    "Multi-speed controller",
+    "6 re-freezable packs for extra cooling",
+  ],
+  specifications: {
+    "Water Tank Capacity": "60 Liters",
+    "Voltage Range": "150-240V",
+    "Power Consumption": "330W",
+    "Net Weight": "33 kg",
+    "Gross Weight": "37 kg",
+    "Product Dimensions": "810 x 630 x 1140 mm",
+    "Motor": "BLDC Inverter Motor",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-5000 Plus Inverter Cool Master has a 60-liter water tank.",
+    },
+    {
+      question: "What type of motor does it use?",
+      answer:
+        "It uses a special BLDC energy-efficient inverter motor.",
+    },
+    {
+      question: "How much power does it consume?",
+      answer:
+        "The motor has a listed power consumption of 330W.",
+    },
+    {
+      question: "Does the motor maintain a constant RPM?",
+      answer:
+        "Yes, the motor is designed to maintain a constant RPM even during voltage fluctuations between 150V and 240V.",
+    },
+    {
+      question: "Does it come with cooling packs?",
+      answer:
+        "Yes, 6 re-freezable packs are included for extra cooling.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 810 x 630 x 1140 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4700-plus-cool-master",
+  name: "Super Asia ECM-4700 Plus Cool Master",
+  slug: "super-asia-ecm-4700-plus-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 27500,
+  image: "/products/superasia/plus1.webp",
+  images: [
+    "/products/superasia/plus1.webp",
+  ],
+  model: "ECM-4700 PLUS COOL MASTER",
+  description:
+    "Super Asia ECM-4700 Plus Cool Master air cooler with a 50-liter water tank, powerful air throw, anti-bacterial honeycomb cooling pads, and auto swing cooling.",
+  features: [
+    "50-liter water tank",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4700 Plus Cool Master has a 50-liter water tank.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM-4700 Plus Cool Master operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+
+{
+  id: "super-asia-ecm-5500-plus-jet-cool-black",
+  name: "Super Asia ECM-5500 Plus Jet Cool Black",
+  slug: "super-asia-ecm-5500-plus-jet-cool-black",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 34400,
+  image: "/products/superasia/black1.webp",
+  images: [
+    "/products/superasia/black1.webp",
+    "/products/superasia/black2.webp",
+    "/products/superasia/black3.webp",
+    "/products/superasia/black4.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM-5500 PLUS JET COOL BLACK",
+  description:
+    "Super Asia ECM-5500 Plus Jet Cool Black air cooler with a 60-liter water tank, powerful air flow, honeycomb cooling pads, and efficient room cooling.",
+  features: [
+    "60-liter water tank",
+    "Top-loading cooling box",
+    "6 re-freezable ice packs",
+    "Powerful and energy-efficient motor",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Powerful air throw with auto swing",
+    "Fan-based cooling",
+    "Two-speed fan control",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply system with float valve",
+    "Low maintenance and long-lasting design",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "60 Liters",
+    "Net Weight": "33 kg",
+    "Gross Weight": "37 kg",
+    "Product Dimensions": "810 x 630 x 1140 mm",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-5500 Plus Jet Cool Black has a 60-liter water tank.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "What type of cooling pads does it use?",
+      answer:
+        "It uses high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features powerful air throw with auto swing for uniform cooling.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 810 x 630 x 1140 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4500-dc-super-cool",
+  name: "Super Asia ECM-4500 DC Super Cool",
+  slug: "super-asia-ecm-4500-dc-super-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 21700,
+  image: "/products/superasia/dc1.webp",
+  images: [
+    "/products/superasia/dc1.webp",
+    "/products/superasia/dc2.webp",
+    "/products/superasia/dc3.webp",
+  ],
+  model: "ECM 4500 DC SUPER COOL",
+  description:
+    "Super Asia ECM 4500 DC Super Cool air cooler with a 50-liter water tank, powerful airflow, energy-efficient motor, and three-sided anti-bacterial honeycomb cooling pads.",
+  features: [
+    "50-liter water tank",
+    "Solar and DC-12V operation",
+    "Powerful and energy-efficient motor",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Powerful air throw with auto swing",
+    "Fan-based cooling",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Low maintenance and long-lasting design",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Power Supply": "DC-12V / Solar",
+    "Net Weight": "14 kg",
+    "Gross Weight": "17 kg",
+    "Product Dimensions": "660 x 560 x 1130 mm",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM 4500 DC Super Cool has a 50-liter water tank.",
+    },
+    {
+      question: "What power supply does it use?",
+      answer:
+        "It works on solar and DC-12V power supplies only and does not operate on AC-220V electricity.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features powerful air throw with auto swing for uniform cooling.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 660 x 560 x 1130 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4900-plus-quick-cool",
+  name: "Super Asia ECM-4900 Plus Quick Cool",
+  slug: "super-asia-ecm-4900-plus-quick-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 27500,
+  image: "/products/superasia/900a.webp",
+  images: [
+    "/products/superasia/900a.webp",
+    "/products/superasia/900b.webp",
+    "/products/superasia/900c.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM 4900 PLUS QUICK COOL",
+  description:
+    "Super Asia ECM 4900 Plus Quick Cool air cooler with a 70-liter water tank, powerful airflow, energy-efficient motor, and three-sided anti-bacterial honeycomb cooling pads.",
+  features: [
+    "70-liter water tank",
+    "Top-loading cooling box",
+    "6 re-freezable ice packs",
+    "Powerful and energy-efficient motor",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Powerful air throw with auto swing",
+    "Fan-based cooling",
+    "Two-speed fan control",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Low maintenance and long-lasting design",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "70 Liters",
+    "Net Weight": "31 kg",
+    "Gross Weight": "36 kg",
+    "Product Dimensions": "715 x 630 x 1140 mm",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM 4900 Plus Quick Cool has a 70-liter water tank.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features powerful air throw with auto swing for uniform cooling.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 715 x 630 x 1140 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-jc-777-plus-super-sonic",
+  name: "Super Asia JC-777 Plus Super Sonic",
+  slug: "super-asia-jc-777-plus-super-sonic",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 31500,
+  image: "/products/superasia/777a.webp",
+  images: [
+    "/products/superasia/777a.webp",
+    "/products/superasia/777n.webp",
+    "/products/superasia/777c.webp",
+    "/products/superasia/aircooler2.webp",
+  ],
+  model: "JC-777 PLUS SUPER SONIC",
+  description:
+    "Super Asia JC-777 Plus Super Sonic air cooler with a 45-liter water tank, powerful airflow, efficient cooling, and durable shock and rust-proof body.",
+  features: [
+    "45-liter water tank",
+    "4 re-freezable ice packs",
+    "Powerful airflow and cooling efficiency",
+    "Fan-based cooling",
+    "Memory function",
+    "Two-speed fan control",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply system with float valve",
+    "Low maintenance and long-lasting design",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "45 Liters",
+    "Net Weight": "23 kg",
+    "Gross Weight": "28 kg",
+    "Product Dimensions": "765 x 545 x 1190 mm",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia JC-777 Plus Super Sonic has a 45-liter water tank.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 4 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "How many fan speeds does it have?",
+      answer:
+        "It has two-speed fan control for adjusting airflow.",
+    },
+    {
+      question: "Does it have a continuous water supply system?",
+      answer:
+        "Yes, it has a continuous water supply system with a float valve.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 765 x 545 x 1190 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-6500-auto-inverter-fast-cool",
+  name: "Super Asia ECM-6500 Auto Inverter Fast Cool",
+  slug: "super-asia-ecm-6500-auto-inverter-fast-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 47100,
+  image: "/products/superasia/5500a.webp",
+  images: [
+    "/products/superasia/5500a.webp",
+    "/products/superasia/5500b.webp",
+    "/products/superasia/5500c.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-6500 AUTO INVERTER FAST COOL",
+  description:
+    "Super Asia ECM-6500 Auto Inverter Fast Cool air cooler with a 70-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "70-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+    "System restore function",
+    "Auto-off timer",
+    "Smart touch control panel",
+  ],
+  specifications: {
+    "Water Tank Capacity": "70 Liters",
+    "Rated Voltage": "150-270V",
+    "Net Weight": "33 kg",
+    "Gross Weight": "36 kg",
+    "Product Dimensions": "825 x 570 x 1200 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-6500 Auto Inverter Fast Cool has a 70-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient inverter operation.",
+    },
+    {
+      question: "How energy efficient is the motor?",
+      answer:
+        "The BLDC electronic motor is designed to provide up to 60% energy efficiency.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 825 x 570 x 1200 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4600-plus-easy-cool",
+  name: "Super Asia ECM-4600 Plus Easy Cool",
+  slug: "super-asia-ecm-4600-plus-easy-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 27000,
+  image: "/products/superasia/invert1.webp",
+  images: [
+    "/products/superasia/invert1.webp",
+    "/products/superasia/invert2.webp",
+    "/products/superasia/invert3.webp",
+  ],
+  model: "ECM 4600 PLUS EASY COOL",
+  description:
+    "Super Asia ECM 4600 Plus Easy Cool air cooler with a 50-liter water tank, powerful air throw, anti-bacterial honeycomb cooling pads, and auto swing cooling.",
+  features: [
+    "50-liter water tank",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Colors": "White, Black",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM 4600 Plus Easy Cool has a 50-liter water tank.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM 4600 Plus Easy Cool operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-5500-plus-inverter-jet-cool",
+  name: "Super Asia ECM-5500 Plus Inverter Jet Cool",
+  slug: "super-asia-ecm-5500-plus-inverter-jet-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 41600,
+  image: "/products/superasia/5000a.webp",
+  images: [
+    "/products/superasia/5000a.webp",
+    "/products/superasia/5000b.webp",
+    "/products/superasia/5000c.webp",
+    "/products/superasia/5000d.webp",
+  ],
+  model: "ECM-5500 PLUS INVERTER JET COOL",
+  description:
+    "Super Asia ECM-5500 Plus Inverter Jet Cool air cooler with a 60-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "60-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "60 Liters",
+    "Rated Voltage": "220 V",
+    "Net Weight": "33 kg",
+    "Gross Weight": "37 kg",
+    "Product Dimensions": "810 x 630 x 1140 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-5500 Plus Inverter Jet Cool has a 60-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient operation.",
+    },
+    {
+      question: "What is the rated voltage?",
+      answer:
+        "The Super Asia ECM-5500 Plus Inverter Jet Cool operates at 220 V.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 810 x 630 x 1140 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-5000-auto-inverter-cool-star",
+  name: "Super Asia ECM-5000 Auto Inverter Cool Star",
+  slug: "super-asia-ecm-5000-auto-inverter-cool-star",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 43100,
+  image: "/products/superasia/cool3.webp",
+  images: [
+    "/products/superasia/cool3.webp",
+    "/products/superasia/cool4.webp",
+    "/products/superasia/cool5.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-5000 AUTO INVERTER COOL STAR",
+  description:
+    "Super Asia ECM-5000 Auto Inverter Cool Star air cooler with a 60-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "60-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+    "System restore function",
+    "Auto-off timer",
+    "Smart touch control panel",
+  ],
+  specifications: {
+    "Water Tank Capacity": "60 Liters",
+    "Rated Voltage": "150-270V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "810 x 630 x 1140 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-5000 Auto Inverter Cool Star has a 60-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient inverter operation.",
+    },
+    {
+      question: "How energy efficient is the motor?",
+      answer:
+        "The BLDC electronic motor is designed to provide up to 60% energy efficiency.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 810 x 630 x 1140 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4700-plus-dc-inverter-cool-master",
+  name: "Super Asia ECM-4700 Plus DC Inverter Cool Master",
+  slug: "super-asia-ecm-4700-plus-dc-inverter-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 25500,
+  image: "/products/superasia/cool1.webp",
+  images: [
+    "/products/superasia/cool1.webp",
+    "/products/superasia/cool2.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-4700 PLUS DC INVERTER COOL MASTER",
+  description:
+    "Super Asia ECM-4700 Plus DC Inverter Cool Master air cooler with a 50-liter water tank, powerful BLDC electronic motor, solar and DC-12V operation, and efficient evaporative cooling.",
+  features: [
+    "50-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Solar / DC-12V operation",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "Large water tank capacity",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "DC-12V",
+    "Net Weight": "24 kg",
+    "Gross Weight": "27 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4700 Plus DC Inverter Cool Master has a 50-liter water tank.",
+    },
+    {
+      question: "What power supply does it use?",
+      answer:
+        "It operates on DC-12V and is compatible with solar power.",
+    },
+    {
+      question: "Does it use a BLDC motor?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, it features auto swing for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+
+
+{
+  id: "super-asia-ecm-4700-auto-inverter-cool-master",
+  name: "Super Asia ECM-4700 Auto Inverter Cool Master",
+  slug: "super-asia-ecm-4700-auto-inverter-cool-master",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 37700,
+  image: "/products/superasia/invert1.webp",
+  images: [
+    "/products/superasia/invert1.webp",
+    "/products/superasia/invert3.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-4700 AUTO INVERTER COOL MASTER",
+  description:
+    "Super Asia ECM-4700 Auto Inverter Cool Master air cooler with a 50-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "System restore function",
+    "Auto-off timer",
+    "Smart touch control panel",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "150-270V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4700 Auto Inverter Cool Master has a 50-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient inverter operation.",
+    },
+    {
+      question: "How energy efficient is the motor?",
+      answer:
+        "The BLDC electronic motor is designed to provide up to 60% energy efficiency.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, the air cooler features an auto swing function for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4600-auto-inverter-easy-cool",
+  name: "Super Asia ECM-4600 Auto Inverter Easy Cool",
+  slug: "super-asia-ecm-4600-auto-inverter-easy-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 37200,
+  image: "/products/superasia/invert1.webp",
+  images: [
+    "/products/superasia/invert1.webp",
+    "/products/superasia/invert2.webp",
+    "/products/superasia/invert3.webp",
+    "/products/superasia/5500d.webp",
+  ],
+  model: "ECM-4600 AUTO INVERTER EASY COOL",
+  description:
+    "Super Asia ECM-4600 Auto Inverter Easy Cool air cooler with a 50-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "50-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "System restore function",
+    "Auto-off timer",
+    "Smart touch control panel",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Rated Voltage": "150-270V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4600 Auto Inverter Easy Cool has a 50-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient inverter operation.",
+    },
+    {
+      question: "How energy efficient is the motor?",
+      answer:
+        "The BLDC electronic motor is designed to provide up to 60% energy efficiency.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, the air cooler features an auto swing function for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-5500-auto-inverter-jet-cool",
+  name: "Super Asia ECM-5500 Auto Inverter Jet Cool",
+  slug: "super-asia-ecm-5500-auto-inverter-jet-cool",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 43100,
+  image: "/products/superasia/5500a.webp",
+  images: [
+    "/products/superasia/5500a.webp",
+    "/products/superasia/5500b.webp",
+    "/products/superasia/5500c.webp",
+    "/products/superasia/5500d.webp",
+   
+  ],
+  model: "ECM-5500 AUTO INVERTER JET COOL",
+  description:
+    "Super Asia ECM-5500 Auto Inverter Jet Cool air cooler with a 60-liter water tank, powerful BLDC electronic motor, smart controller, and energy-efficient cooling.",
+  features: [
+    "60-liter water tank",
+    "Powerful BLDC electronic motor",
+    "Up to 60% energy efficient",
+    "Built-in smart controller",
+    "Top-loading cooling box",
+    "Powerful air throw",
+    "Anti-bacterial honeycomb cooling pads",
+    "Continuous water supply",
+    "Auto swing",
+    "System restore function",
+    "Auto-off timer",
+    "Smart touch control panel",
+  ],
+  specifications: {
+    "Water Tank Capacity": "60 Liters",
+    "Rated Voltage": "150-270V",
+    "Net Weight": "28 kg",
+    "Gross Weight": "31 kg",
+    "Product Dimensions": "810 x 630 x 1140 mm",
+    "Motor": "BLDC Electronic Motor",
+    "Cooling Pad": "Anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-5500 Auto Inverter Jet Cool has a 60-liter water tank.",
+    },
+    {
+      question: "Is this an inverter air cooler?",
+      answer:
+        "Yes, it features a powerful BLDC electronic motor designed for energy-efficient inverter operation.",
+    },
+    {
+      question: "How energy efficient is the motor?",
+      answer:
+        "The BLDC electronic motor is designed to provide up to 60% energy efficiency.",
+    },
+    {
+      question: "Does it have honeycomb cooling pads?",
+      answer:
+        "Yes, it features anti-bacterial honeycomb cooling pads.",
+    },
+    {
+      question: "Does it have an auto swing function?",
+      answer:
+        "Yes, the air cooler features an auto swing function for wider air distribution.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 810 x 630 x 1140 mm.",
+    },
+  ],
+},
+{
+  id: "super-asia-ecm-4600-plus-dc-inverter",
+  name: "Super Asia ECM-4600 Plus DC Inverter Easy Cool",
+  slug: "super-asia-ecm-4600-plus-dc-inverter",
+  categoryId: "air-cooler",
+  brandId: "super-asia",
+  price: 25000,
+  image: "/products/superasia/airc2.webp",
+  images: [
+    "/products/superasia/airc2.webp",
+    "/products/superasia/airc5.webp",
+    "/products/superasia/airc6.webp",
+    "/products/superasia/airc3.webp",
+    "/products/superasia/airc4.webp",
+  ],
+  model: "ECM-4600 PLUS DC INVERTER EASY COOL",
+  description:
+    "Super Asia ECM-4600 Plus DC Inverter Easy Cool air cooler with a 50-liter water tank, powerful energy-efficient motor, solar and DC-12V operation, and honeycomb evaporative cooling.",
+  features: [
+    "50-liter water tank",
+    "DC-12V operation",
+    "Solar compatible",
+    "6 re-freezable ice packs",
+    "Powerful and energy-efficient motor",
+    "Three-sided anti-bacterial honeycomb cooling pads",
+    "Fan-based cooling",
+    "Powerful air throw with auto swing",
+    "Memory function",
+    "Shock and rust-proof plastic body",
+    "Continuous water supply with float valve",
+    "Low maintenance and long-lasting design",
+    "Strong four-way movement wheels",
+  ],
+  specifications: {
+    "Water Tank Capacity": "50 Liters",
+    "Power Supply": "DC-12V / Solar",
+    "Net Weight": "24 kg",
+    "Gross Weight": "27 kg",
+    "Product Dimensions": "665 x 560 x 1120 mm",
+    "Cooling Pad": "Three-sided anti-bacterial honeycomb",
+  },
+  faqs: [
+    {
+      question: "What is the water tank capacity?",
+      answer:
+        "The Super Asia ECM-4600 Plus DC Inverter Easy Cool has a 50-liter water tank.",
+    },
+    {
+      question: "Does this air cooler work on AC electricity?",
+      answer:
+        "No. It works on solar and DC-12V power supplies only and does not operate on AC-220V electricity.",
+    },
+    {
+      question: "Does it come with ice packs?",
+      answer:
+        "Yes, 6 re-freezable ice packs are included for extra cooling.",
+    },
+    {
+      question: "What type of cooling pads does it use?",
+      answer:
+        "It uses high-efficiency three-sided anti-bacterial honeycomb evaporative cooling pads.",
+    },
+    {
+      question: "What are the dimensions?",
+      answer:
+        "The product dimensions are 665 x 560 x 1120 mm.",
+    },
+  ],
+},
 
 {
   id: "super-asia-ecm-3500-plus-dc",
@@ -2041,36 +4241,6 @@ faqs: [
     {
       question: "What is the model of this air cooler?",
       answer: "The model is Super Asia ECM-4500 Plus DC Super Cool.",
-    },
-    {
-      question: "What type of product is it?",
-      answer: "It is a room air cooler.",
-    },
-  ],
-},
-
-{
-  id: "super-asia-ecm-4600-plus-dc",
-  name: "Super Asia ECM-4600 Plus DC Easy Cool",
-  slug: "super-asia-ecm-4600-plus-dc",
-  categoryId: "air-cooler",
-  brandId: "super-asia",
-  price: 22800,
-  image: "/products/superasia/wc3.webp",
-  model: "ECM-4600 PLUS DC EASY COOL",
-  description:
-    "Super Asia ECM-4600 Plus DC Easy Cool air cooler designed for room cooling.",
-  features: [
-    "Easy Cool design",
-    "DC model",
-    "Room air cooler",
-    "Super Asia ECM series",
-  ],
-  specifications: {},
-  faqs: [
-    {
-      question: "What is the model of this air cooler?",
-      answer: "The model is Super Asia ECM-4600 Plus DC Easy Cool.",
     },
     {
       question: "What type of product is it?",

@@ -6,11 +6,9 @@ import Link from "next/link";
 import {
   ChevronDown,
   ChevronRight,
-  Heart,
   Menu,
   Search,
   ShoppingCart,
-  UserRound,
   X,
   Phone,
   Home,
@@ -157,24 +155,8 @@ useEffect(() => {
           ====================================================== */}
           <div className="ml-auto flex shrink-0 items-center gap-1.5 md:gap-2">
 
-            {/* ACCOUNT - DESKTOP ONLY */}
-            <button
-              type="button"
-              aria-label="Account"
-              className="hidden h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--dark)] transition-all hover:border-[var(--primary)] hover:bg-[var(--primary-light)] hover:text-[var(--primary)] md:flex"
-            >
-              <UserRound className="h-5 w-5" />
-            </button>
-
-            {/* WISHLIST - DESKTOP ONLY */}
-            <button
-              type="button"
-              aria-label="Wishlist"
-              className="hidden h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--dark)] transition-all hover:border-[var(--primary)] hover:bg-[var(--primary-light)] hover:text-[var(--primary)] sm:flex"
-            >
-              <Heart className="h-5 w-5" />
-            </button>
-
+        
+          
             {/* MOBILE SEARCH ICON */}
             <button
               type="button"
@@ -483,7 +465,7 @@ useEffect(() => {
 
         {/* Shop by Category */}
         <Link
-          href="/store#shop-by-category"
+          href="/#shop-by-category"
           onClick={closeMobileMenu}
           className="mobile-nav-link"
         >
@@ -494,7 +476,7 @@ useEffect(() => {
 
         {/* Shop by Brand */}
         <Link
-          href="/store#shop-by-brand"
+          href="/#shop-by-brand"
           onClick={closeMobileMenu}
           className="mobile-nav-link"
         >

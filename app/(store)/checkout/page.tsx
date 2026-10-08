@@ -19,11 +19,9 @@ import type { Order } from "@/types/order";
 export default function CheckoutPage() {
   const { items, subtotal, clearCart } = useCart();
 
-  const [isSubmitting, setIsSubmitting] =
-    useState(false);
-  const [orderId, setOrderId] = useState<string | null>(
-    null,
-  );
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [orderId, setOrderId] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   /* =====================================================
      EMPTY CART
@@ -35,7 +33,6 @@ export default function CheckoutPage() {
         <main className="bg-[var(--background-soft)]">
           <div className="container-main py-10 sm:py-16">
             <div className="mx-auto max-w-2xl rounded-xl border border-[var(--border)] bg-white px-5 py-12 text-center shadow-[var(--shadow-sm)] sm:rounded-[var(--radius-xl)] sm:px-6 sm:py-16">
-
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--primary-light)] sm:h-16 sm:w-16">
                 <ShoppingBag className="h-6 w-6 text-[var(--primary)] sm:h-7 sm:w-7" />
               </div>
@@ -45,8 +42,7 @@ export default function CheckoutPage() {
               </h1>
 
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[var(--text-muted)] sm:mt-3">
-                Add a product to your cart before
-                proceeding to checkout.
+                Add a product to your cart before proceeding to checkout.
               </p>
 
               <Link
@@ -55,7 +51,6 @@ export default function CheckoutPage() {
               >
                 Continue Shopping
               </Link>
-
             </div>
           </div>
         </main>
@@ -73,10 +68,9 @@ export default function CheckoutPage() {
     event.preventDefault();
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    const formData = new FormData(
-      event.currentTarget,
-    );
+    const formData = new FormData(event.currentTarget);
 
     const order: Order = {
       id: `order-${Date.now()}`,
@@ -84,9 +78,7 @@ export default function CheckoutPage() {
       customer: {
         name: String(formData.get("name") ?? ""),
         phone: String(formData.get("phone") ?? ""),
-        address: String(
-          formData.get("address") ?? "",
-        ),
+        address: String(formData.get("address") ?? ""),
       },
 
       items: items.map((item) => ({
@@ -105,12 +97,22 @@ export default function CheckoutPage() {
       createdAt: new Date().toISOString(),
     };
 
-    const createdOrder = await createOrder(order);
+    try {
+      const createdOrder = await createOrder(order);
 
-    setOrderId(createdOrder.id);
-    clearCart();
-    setIsSubmitting(false);
+      setOrderId(createdOrder.id);
+      clearCart();
+    } catch (error) {
+      console.error("Failed to create order:", error);
+
+      setSubmitError(
+        "We couldn't place your order. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
+
   /* =====================================================
      ORDER RECEIVED
   ===================================================== */
@@ -121,13 +123,10 @@ export default function CheckoutPage() {
         <main className="bg-[var(--background-soft)]">
           <div className="container-main py-8 sm:py-14">
             <div className="mx-auto max-w-2xl">
-
               {/* Success Card */}
               <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-[var(--shadow-sm)]">
-
                 {/* Top Success Area */}
                 <div className="px-5 pb-6 pt-8 text-center sm:px-8 sm:pb-8 sm:pt-10">
-
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-600 sm:h-16 sm:w-16">
                     <Check className="h-7 w-7 sm:h-8 sm:w-8" />
                   </div>
@@ -148,9 +147,7 @@ export default function CheckoutPage() {
 
                 {/* Order Details */}
                 <div className="mx-4 rounded-xl border border-[var(--border-light)] bg-[var(--background-soft)] p-4 sm:mx-6 sm:p-5">
-
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-
                     <div>
                       <p className="text-[10px] font-medium uppercase tracking-wide text-[var(--text-muted)] sm:text-xs">
                         Order ID
@@ -168,19 +165,16 @@ export default function CheckoutPage() {
                         Cash on Delivery
                       </span>
                     </div>
-
                   </div>
                 </div>
 
                 {/* What Happens Next */}
                 <div className="px-5 py-6 sm:px-8 sm:py-7">
-
                   <h2 className="text-sm font-semibold text-[var(--dark)] sm:text-base">
                     What happens next?
                   </h2>
 
                   <div className="mt-4 space-y-3">
-
                     <div className="flex gap-3">
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--primary-light)] text-xs font-bold text-[var(--primary)]">
                         1
@@ -228,7 +222,6 @@ export default function CheckoutPage() {
                         </p>
                       </div>
                     </div>
-
                   </div>
 
                   <Link
@@ -237,9 +230,7 @@ export default function CheckoutPage() {
                   >
                     Continue Shopping
                   </Link>
-
                 </div>
-
               </div>
             </div>
           </div>
@@ -247,6 +238,7 @@ export default function CheckoutPage() {
       </StoreLayout>
     );
   }
+
   /* =====================================================
      CHECKOUT
   ===================================================== */
@@ -255,10 +247,8 @@ export default function CheckoutPage() {
     <StoreLayout>
       <main className="bg-[var(--background-soft)]">
         <div className="container-main py-7 sm:py-12">
-
           {/* Header */}
           <div className="mb-6 sm:mb-8">
-
             <Link
               href="/cart"
               className="mb-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--navy)] hover:text-[var(--primary)] sm:mb-5 sm:gap-2 sm:text-sm"
@@ -279,23 +269,19 @@ export default function CheckoutPage() {
               Enter your delivery details and place
               your order with Cash on Delivery.
             </p>
-
           </div>
 
           <form
             onSubmit={handleSubmit}
             className="grid items-start gap-4 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_380px]"
           >
-
             {/* =================================================
                 CUSTOMER INFORMATION
             ================================================= */}
 
             <div className="rounded-xl border border-[var(--border)] bg-white shadow-[var(--shadow-sm)] sm:rounded-[var(--radius-xl)]">
-
               {/* Card Header */}
               <div className="border-b border-[var(--border-light)] px-4 py-4 sm:px-8 sm:py-5">
-
                 <h2 className="flex items-center gap-2 text-[15px] font-bold text-[var(--dark)] sm:text-lg">
                   <UserRound className="h-4 w-4 text-[var(--primary)] sm:h-5 sm:w-5" />
                   Delivery Information
@@ -305,12 +291,10 @@ export default function CheckoutPage() {
                   Please provide accurate information
                   for your order.
                 </p>
-
               </div>
 
               {/* Form */}
               <div className="space-y-4 p-4 sm:space-y-5 sm:p-8">
-
                 {/* Name */}
                 <div>
                   <label
@@ -386,7 +370,6 @@ export default function CheckoutPage() {
                   </p>
 
                   <div className="flex items-start gap-2.5 rounded-lg border border-[var(--primary)] bg-[var(--primary-light)] p-3 sm:gap-3 sm:rounded-xl sm:p-4">
-
                     <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white sm:h-8 sm:w-8">
                       <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </div>
@@ -400,9 +383,18 @@ export default function CheckoutPage() {
                         Pay when your order is delivered.
                       </p>
                     </div>
-
                   </div>
                 </div>
+
+                {/* Submit Error */}
+                {submitError && (
+                  <div
+                    role="alert"
+                    className="rounded-lg border border-red-200 bg-red-50 px-3 py-2.5 text-center text-xs font-medium text-red-700 sm:px-4 sm:py-3 sm:text-sm"
+                  >
+                    {submitError}
+                  </div>
+                )}
 
                 {/* Submit */}
                 <button
@@ -420,7 +412,6 @@ export default function CheckoutPage() {
                   that your delivery information is
                   correct.
                 </p>
-
               </div>
             </div>
 
@@ -429,25 +420,20 @@ export default function CheckoutPage() {
             ================================================= */}
 
             <aside className="rounded-xl border border-[var(--border)] bg-white shadow-[var(--shadow-sm)] sm:sticky sm:top-28 sm:rounded-[var(--radius-xl)]">
-
               <div className="border-b border-[var(--border-light)] px-4 py-4 sm:px-6 sm:py-5">
-
                 <h2 className="flex items-center gap-2 text-[15px] font-bold text-[var(--dark)] sm:text-lg">
                   <ShoppingBag className="h-4 w-4 text-[var(--primary)] sm:h-5 sm:w-5" />
                   Order Summary
                 </h2>
-
               </div>
 
               <div className="p-4 sm:p-6">
-
                 <div className="space-y-3.5 sm:space-y-5">
                   {items.map((item) => (
                     <div
                       key={item.product.id}
                       className="flex gap-3 sm:gap-4"
                     >
-
                       <div className="min-w-0 flex-1">
                         <p className="line-clamp-2 text-[13px] font-semibold leading-5 text-[var(--dark)] sm:text-sm">
                           {item.product.name}
@@ -465,7 +451,6 @@ export default function CheckoutPage() {
                           item.quantity
                         ).toLocaleString("en-PK")}
                       </p>
-
                     </div>
                   ))}
                 </div>
@@ -496,7 +481,6 @@ export default function CheckoutPage() {
                 <div className="my-4 h-px bg-[var(--border-light)] sm:my-6" />
 
                 <div className="flex items-center justify-between">
-
                   <span className="text-[15px] font-bold text-[var(--dark)] sm:text-base">
                     Total
                   </span>
@@ -505,12 +489,10 @@ export default function CheckoutPage() {
                     Rs.{" "}
                     {subtotal.toLocaleString("en-PK")}
                   </span>
-
                 </div>
 
                 {/* COD info */}
                 <div className="mt-4 rounded-lg bg-[var(--background-soft)] p-3 sm:mt-5 sm:p-4">
-
                   <p className="text-[11px] font-semibold text-[var(--dark)] sm:text-xs">
                     Cash on Delivery
                   </p>
@@ -519,12 +501,9 @@ export default function CheckoutPage() {
                     No online payment is required.
                     Pay when your order arrives.
                   </p>
-
                 </div>
-
               </div>
             </aside>
-
           </form>
         </div>
       </main>

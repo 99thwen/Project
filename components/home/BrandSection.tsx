@@ -79,7 +79,7 @@ export default function BrandSection() {
 
           >
 
-            View all 13 brands →
+            View all 12 brands →
 
           </Link>
 
