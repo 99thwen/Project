@@ -602,3 +602,21 @@ select {
     letter-spacing: -0.02em;
   }
 }
+
+@keyframes productFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-page-transition {
+  animation: productFadeIn 300ms ease-out;
+}
+#product-grid {
+  scroll-margin-top: 110px;
+}

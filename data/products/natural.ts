@@ -49,7 +49,7 @@ export const naturalProducts: Product[] = [
   },
 {
   id: "natural-nle-15l",
-  name: "NLE-15L",
+  name: "Natural Semi Instant Electric Water Heater NE-50 L",
   slug: "natural-nle-15l",
   categoryId: "electric-geyser",
   brandId: "natural",
@@ -94,7 +94,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nle-30l",
-  name: "NLE-30L",
+  name: "Natural NLE-30L Electric Geyser",
   slug: "natural-nle-30l",
   categoryId: "electric-geyser",
   brandId: "natural",
@@ -557,16 +557,13 @@ export const naturalProducts: Product[] = [
   },
 {
   id: "natural-nl-2404-b",
-  name: "NL-2404-B",
+  name: "Natural NL-2404-B 4 Burner Gas Cooker",
   slug: "natural-nl-2404-b",
   categoryId: "cooking-range",
   brandId: "natural",
   price: 45160,
-  image: "/products/natural/wc1.webp",
-  images: [
-    "/products/natural/wc1.webp",
-    "/products/natural/wc2.webp",
-  ],
+  image: "/products/natural/nl1.webp",
+  
   model: "NL-2404-B",
   description:
     "The Natural NL-2404-B is a 4-burner gas cooker with electric auto ignition, heat-proof painted burner caps and grates, tempered front and top glass, double oven glass, grill and oven system, and an enamel painted oven tray.",
@@ -620,7 +617,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-2404-g",
-  name: "NL-2404-G",
+  name: "Natural NL-2404-G 4 Burner Gas Cooker",
   slug: "natural-nl-2404-g",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -692,7 +689,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-605",
-  name: "NL-605",
+  name: "Natural NL-605 5 Burner Gas Cooker",
   slug: "natural-nl-605",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -774,7 +771,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-4003",
-  name: "NL-4003",
+  name: "Natural NL-4003 3 Burner Gas Cooker",
   slug: "natural-nl-4003",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -840,7 +837,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-6603",
-  name: "NL-6603",
+  name: "Natural NL-6603 3 Burner Gas Cooker",
   slug: "natural-nl-6603",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -914,7 +911,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-hs-3",
-  name: "NL-HS-3",
+  name: "Natural NL-HS-3 Gas Oven",
   slug: "natural-nl-hs-3",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -990,7 +987,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-603",
-  name: "NL-603",
+  name: "Natural NL-603 3 Burner Gas Cooker",
   slug: "natural-nl-603",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -1069,7 +1066,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-6905",
-  name: "NL-6905",
+  name: "Natural NL-6905 5 Burner Gas Cooker",
   slug: "natural-nl-6905",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -1156,7 +1153,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-7105",
-  name: "NL-7105",
+  name: "Natural NL-7105 5 Burner Gas Cooker",
   slug: "natural-nl-7105",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -1229,7 +1226,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-6605",
-  name: "NL-6605",
+  name: "Natural NL-6605 5 Burner Gas Cooker",
   slug: "natural-nl-6605",
   categoryId: "cooking-range",
   brandId: "natural",
@@ -1311,7 +1308,7 @@ export const naturalProducts: Product[] = [
 },
 {
   id: "natural-nl-3003",
-  name: "NL-3003",
+  name: "Natural NL-3003 3 Burner Gas Cooker",
   slug: "natural-nl-3003",
   categoryId: "cooking-range",
   brandId: "natural",

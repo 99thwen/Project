@@ -4624,6 +4624,81 @@ colors: [
 
 // ---------- WATER DISPENSERS ----------
 {
+  id: "pel-table-top-classic-115",
+  name: "PEL Table-Top Classic 115 Water Dispenser",
+  slug: "pel-table-top-classic-115",
+  categoryId: "dispenser",
+  brandId: "pel",
+  price: 29500,
+  image: "/products/pel/eye1.webp",
+  images: [
+    "/products/pel/eye1.webp",
+    "/products/pel/eye2.webp",
+    "/products/pel/eye3.webp",
+  ],
+  model: "115 Table Top Classic",
+
+  description:
+    "The PEL Table-Top Classic 115 Water Dispenser features a compact and elegant design for convenient access to hot and chilled water. It includes a 3.7-liter cold water tank and a 1.2-liter hot water tank. Its efficient cooling technology helps reduce noise and power consumption, while the food-grade 304 stainless steel components provide rust resistance and antibacterial properties. The dispenser also features a cool cabinet designed to store food and drinks at temperatures up to 3°C.",
+
+  features: [
+    "Compact table-top design",
+    "Elegant white finish",
+    "3.7-liter cold water tank",
+    "1.2-liter hot water tank",
+    "Efficient chilled water technology",
+    "Low-noise operation",
+    "Low power consumption",
+    "304 stainless steel food-grade components",
+    "Rust-resistant and antibacterial properties",
+    "Cool cabinet for food and drinks",
+    "1-year compressor warranty",
+  ],
+
+  specifications: {
+    "Model": "115 Table Top Classic",
+    "Color": "White",
+    "Type": "Compact and Elegant Design",
+    "Cold Tank Capacity": "3.7 Liters",
+    "Hot Tank Capacity": "1.2 Liters",
+    "Cabinet Cooling": "Up to 3°C",
+    "Stainless Steel": "304 Food Grade",
+    "Compressor Warranty": "1 Year",
+  },
+
+  faqs: [
+    {
+      question: "What is the model of the PEL Table-Top Classic dispenser?",
+      answer: "The model is PEL 115 Table Top Classic.",
+    },
+    {
+      question: "What is the cold water tank capacity?",
+      answer: "The cold water tank has a capacity of 3.7 liters.",
+    },
+    {
+      question: "What is the hot water tank capacity?",
+      answer: "The hot water tank has a capacity of 1.2 liters.",
+    },
+    {
+      question: "What color is the PEL Classic 115 dispenser?",
+      answer: "The official listing shows the dispenser in white.",
+    },
+    {
+      question: "Does this dispenser have a storage cabinet?",
+      answer: "Yes, it features a cool cabinet designed to store food and drinks at temperatures up to 3°C.",
+    },
+    {
+      question: "What material is used in its water-contact components?",
+      answer: "PEL lists food-grade 304 stainless steel with rust-resistant and antibacterial properties.",
+    },
+    {
+      question: "What is the warranty on the dispenser?",
+      answer: "The official listing specifies a 1-year compressor warranty.",
+    },
+  ],
+},
+
+{
   id: "pel-215-pearl-water-dispenser",
   name: "PEL 215 Pearl Water Dispenser (Without Refrigerator Compartment)",
   slug: "pel-215-pearl-water-dispenser",
@@ -5847,6 +5922,101 @@ description:
       question: "What is the magnetron warranty?",
       answer:
         "The magnetron is covered by a 2-year warranty.",
+    },
+  ],
+},
+{
+  id: "pel-kitchen-pro-30-ltr",
+  name: "PEL Kitchen Pro 30 LTR Inverter Convection + Air Fryer Microwave Oven",
+  slug: "pel-kitchen-pro-30-ltr",
+  categoryId: "microwave",
+  brandId: "pel",
+  price: 62900,
+  image: "/products/pel/5051.webp",
+  images: [
+    "/products/pel/5051.webp",
+    "/products/pel/5052.webp",
+    "/products/pel/5053.webp",
+    "/products/pel/5054.webp",
+  ],
+  model: "PMO-30 Kitchen Pro ICAF",
+
+  description:
+    "The PEL Kitchen Pro 30 LTR Microwave Oven combines inverter technology, convection cooking and air fryer functionality for versatile everyday cooking. It features a 29-liter oven capacity, 900 W microwave output, a 1000 W grill and a 315 mm turntable. The built-in air fryer mode circulates hot air for crispy results, while the baking mode provides even heat distribution. Operating on a 220 V power supply, this microwave offers convenient cooking, reheating, baking and air frying in one appliance.",
+
+  features: [
+    "29-liter oven capacity",
+    "Inverter microwave technology",
+    "Convection cooking",
+    "Built-in air fryer mode",
+    "Built-in baking mode",
+    "900 W microwave output",
+    "1400 W microwave input",
+    "1000 W grill power",
+    "2450 MHz microwave frequency",
+    "315 mm turntable",
+    "2-year magnetron warranty",
+    "1-year parts warranty",
+  ],
+
+  specifications: {
+    "Model": "PMO-30 Kitchen Pro ICAF",
+    "Type": "Inverter + Convection + Air Fryer",
+    "Oven Capacity": "29 Liters",
+    "Rated Voltage": "220 V",
+    "Rated Input Power (Microwave)": "1400 W",
+    "Rated Output Power (Microwave)": "900 W",
+    "Microwave Frequency": "2450 MHz",
+    "Grill Power": "1000 W",
+    "Turntable Diameter": "315 mm",
+    "Net Weight": "13.6 kg",
+    "Cavity Dimensions (W × D × H)": "355 × 336 × 241 mm",
+    "Outside Dimensions (W × D × H)": "523 × 453.3 × 300 mm",
+    "Packing Dimensions (W × D × H)": "579 × 495 × 370 mm",
+    "Magnetron Warranty": "2 Years",
+    "Parts Warranty": "1 Year",
+  },
+
+  faqs: [
+    {
+      question: "What is the capacity of the PEL Kitchen Pro microwave?",
+      answer: "The PEL Kitchen Pro has a 29-liter oven capacity.",
+    },
+    {
+      question: "Does the PEL Kitchen Pro have an air fryer?",
+      answer: "Yes, it features an air fryer mode that uses hot air circulation to cook food for crispy results.",
+    },
+    {
+      question: "Does this microwave support convection cooking?",
+      answer: "Yes, it supports convection cooking and includes a baking mode for even heat distribution.",
+    },
+    {
+      question: "Does the PEL Kitchen Pro use inverter technology?",
+      answer: "Yes, it uses inverter technology for energy efficiency and consistent performance.",
+    },
+    {
+      question: "What is the microwave output power?",
+      answer: "The rated microwave output power is 900 W.",
+    },
+    {
+      question: "What is the microwave input power?",
+      answer: "The rated microwave input power is 1400 W.",
+    },
+    {
+      question: "What is the grill power?",
+      answer: "The grill power is rated at 1000 W.",
+    },
+    {
+      question: "What is the turntable diameter?",
+      answer: "The turntable diameter is 315 mm.",
+    },
+    {
+      question: "What are the dimensions of the microwave?",
+      answer: "The outside dimensions are 523 × 453.3 × 300 mm (W × D × H).",
+    },
+    {
+      question: "What is the warranty on the PEL Kitchen Pro microwave?",
+      answer: "The official listing specifies a 2-year magnetron warranty and a 1-year parts warranty.",
     },
   ],
 },

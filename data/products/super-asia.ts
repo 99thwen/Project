@@ -3684,6 +3684,7 @@ faqs: [
     },
   ],
 },
+
 {
   id: "super-asia-ecm-5500-plus-inverter-jet-cool",
   name: "Super Asia ECM-5500 Plus Inverter Jet Cool",
@@ -3691,12 +3692,12 @@ faqs: [
   categoryId: "air-cooler",
   brandId: "super-asia",
   price: 41600,
-  image: "/products/superasia/5000a.webp",
+  image: "/products/superasia/5500a.webp",
   images: [
-    "/products/superasia/5000a.webp",
-    "/products/superasia/5000b.webp",
-    "/products/superasia/5000c.webp",
-    "/products/superasia/5000d.webp",
+    "/products/superasia/5500a.webp",
+    "/products/superasia/5500b.webp",
+    "/products/superasia/5500c.webp",
+    "/products/superasia/5500d.webp",
   ],
   model: "ECM-5500 PLUS INVERTER JET COOL",
   description:
