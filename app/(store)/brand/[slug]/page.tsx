@@ -1,9 +1,12 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import StoreLayout from "@/components/layout/StoreLayout";
 import CategoryCatalog from "@/components/products/CategoryCatalog";
+import { getStoreProducts } from "@/lib/serverProducts";
 import { brands } from "@/data/brands";
-import { products } from "@/data/products";
+
+export const dynamic = "force-dynamic";
 
 interface BrandPageProps {
   params: Promise<{
@@ -11,7 +14,9 @@ interface BrandPageProps {
   }>;
 }
 
-export default async function BrandPage({ params }: BrandPageProps) {
+export default async function BrandPage({
+  params,
+}: BrandPageProps) {
   const { slug } = await params;
 
   const brand = brands.find((item) => item.slug === slug);
@@ -20,8 +25,11 @@ export default async function BrandPage({ params }: BrandPageProps) {
     notFound();
   }
 
+  // Load the merged catalogue, including saved admin changes.
+  const products = await getStoreProducts();
+
   const brandProducts = products.filter(
-    (product) => product.brandId === brand.id
+    (product) => product.brandId === brand.id,
   );
 
   return (
@@ -30,7 +38,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
         <section className="container-main py-10 sm:py-14">
           <div className="mb-8">
             <div className="mb-3 text-sm text-slate-500">
-              Home <span className="mx-2">/</span> Brands{" "}
+              Home <span className="mx-2">/</span> Brands
               <span className="mx-2">/</span> {brand.name}
             </div>
 
@@ -65,7 +73,9 @@ export default async function BrandPage({ params }: BrandPageProps) {
   );
 }
 
-export async function generateMetadata({ params }: BrandPageProps) {
+export async function generateMetadata({
+  params,
+}: BrandPageProps): Promise<Metadata> {
   const { slug } = await params;
 
   const brand = brands.find((item) => item.slug === slug);

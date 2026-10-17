@@ -1,8 +1,10 @@
 import StoreLayout from "@/components/layout/StoreLayout";
 import CategoryCatalog from "@/components/products/CategoryCatalog";
-import { products } from "@/data/products";
+import { getStoreProducts } from "@/lib/serverProducts";
 import { categories } from "@/data/categories";
 import { brands } from "@/data/brands";
+
+export const dynamic = "force-dynamic";
 
 interface ShopPageProps {
   searchParams: Promise<{
@@ -20,12 +22,14 @@ export default async function ShopPage({
   const brandSlug = params.brand || "";
 
   const category = categories.find(
-    (item) => item.slug === categorySlug
+    (item) => item.slug === categorySlug,
   );
 
   const brand = brands.find(
-    (item) => item.slug === brandSlug
+    (item) => item.slug === brandSlug,
   );
+
+  const products = await getStoreProducts();
 
   return (
     <StoreLayout>

@@ -5,8 +5,10 @@ import { ChevronRight } from "lucide-react";
 
 import StoreLayout from "@/components/layout/StoreLayout";
 import ProductDetails from "@/components/products/ProductDetails";
-import { products } from "@/data/products";
 import { categories } from "@/data/categories";
+import { getStoreProducts } from "@/lib/serverProducts";
+
+export const dynamic = "force-dynamic";
 
 interface ProductPageProps {
   params: Promise<{
@@ -14,7 +16,8 @@ interface ProductPageProps {
   }>;
 }
 
-function getProduct(slug: string) {
+async function getProduct(slug: string) {
+  const products = await getStoreProducts();
   return products.find((product) => product.slug === slug);
 }
 
@@ -22,7 +25,7 @@ export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProduct(slug);
 
   if (!product) {
     return {
@@ -42,22 +45,22 @@ export default async function ProductPage({
   params,
 }: ProductPageProps) {
   const { slug } = await params;
-
-  const product = getProduct(slug);
+  const product = await getProduct(slug);
 
   if (!product) {
     notFound();
   }
 
   const category = categories.find(
-    (item) => item.id === product.categoryId,
+    (item) =>
+      item.id === product.categoryId ||
+      item.slug === product.categoryId,
   );
 
   return (
     <StoreLayout>
       <main className="bg-[var(--background-soft)]">
         <div className="container-main py-8 sm:py-10 lg:py-12">
-          {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
             className="mb-8 flex flex-wrap items-center gap-2 text-xs text-[var(--text-muted)]"

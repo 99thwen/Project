@@ -3,10 +3,10 @@ import { Search } from "lucide-react";
 
 import ProductGrid from "@/components/products/ProductGrid";
 import StoreLayout from "@/components/layout/StoreLayout";
-import { products } from "@/data/products";
+import { getStoreProducts } from "@/lib/serverProducts";
 import { categories } from "@/data/categories";
 import { brands } from "@/data/brands";
-
+export const dynamic = "force-dynamic";
 interface SearchPageProps {
   searchParams: Promise<{
     q?: string;
@@ -20,6 +20,7 @@ export default async function SearchPage({
   const query = (params.q ?? "").trim();
 
   const normalizedQuery = query.toLowerCase();
+const products = await getStoreProducts();
 
   const results = normalizedQuery
     ? products.filter((product) => {

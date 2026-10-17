@@ -1,7 +1,10 @@
+
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
+
 import {
   ArrowRight,
   CheckCircle2,
@@ -35,8 +38,22 @@ export default function AdminDashboardPage() {
   }, []);
 
   const stats = useMemo(() => {
+    // Includes pending, confirmed, and delivered orders.
+    // Cancelled orders are excluded.
     const totalSales = orders.reduce(
-      (sum, order) => sum + order.subtotal,
+      (sum, order) =>
+        order.status !== "cancelled"
+          ? sum + order.subtotal
+          : sum,
+      0,
+    );
+
+    // Includes only completed/delivered orders.
+    const deliveredSales = orders.reduce(
+      (sum, order) =>
+        order.status === "delivered"
+          ? sum + order.subtotal
+          : sum,
       0,
     );
 
@@ -55,6 +72,7 @@ export default function AdminDashboardPage() {
         (order) => order.status === "cancelled",
       ).length,
       totalSales,
+      deliveredSales,
     };
   }, [orders]);
 
@@ -73,8 +91,8 @@ export default function AdminDashboardPage() {
         </p>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Order Statistics */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <StatCard
           label="Total Orders"
           value={loading ? "—" : stats.totalOrders}
@@ -86,6 +104,13 @@ export default function AdminDashboardPage() {
           value={loading ? "—" : stats.pending}
           icon={<Clock3 className="h-5 w-5" />}
           valueClass="text-amber-600"
+        />
+
+        <StatCard
+          label="Confirmed"
+          value={loading ? "—" : stats.confirmed}
+          icon={<CheckCircle2 className="h-5 w-5" />}
+          valueClass="text-blue-600"
         />
 
         <StatCard
@@ -104,25 +129,19 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Sales Overview */}
-      <section className="rounded-2xl border border-[var(--border-light)] bg-white p-5 shadow-sm sm:p-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50">
-            <TrendingUp className="h-5 w-5 text-[var(--primary)]" />
-          </div>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <SalesCard
+          label="Total Sales"
+          value={stats.totalSales}
+          loading={loading}
+        />
 
-          <div>
-            <p className="text-xs font-medium text-[var(--text-muted)]">
-              Total Order Value
-            </p>
-
-            <p className="mt-1 text-2xl font-bold text-[var(--dark)]">
-              {loading
-                ? "—"
-                : `Rs. ${stats.totalSales.toLocaleString("en-PK")}`}
-            </p>
-          </div>
-        </div>
-      </section>
+        <SalesCard
+          label="Delivered Sales"
+          value={stats.deliveredSales}
+          loading={loading}
+        />
+      </div>
 
       {/* Recent Orders */}
       <section className="overflow-hidden rounded-2xl border border-[var(--border-light)] bg-white shadow-sm">
@@ -180,9 +199,9 @@ export default function AdminDashboardPage() {
   );
 }
 
-/* ----------------------------- */
-/* Stat Card */
-/* ----------------------------- */
+/* --------------------------------
+   Statistics Card
+-------------------------------- */
 
 function StatCard({
   label,
@@ -192,7 +211,7 @@ function StatCard({
 }: {
   label: string;
   value: number | string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   valueClass?: string;
 }) {
   return (
@@ -218,20 +237,52 @@ function StatCard({
   );
 }
 
-/* ----------------------------- */
-/* Recent Order */
-/* ----------------------------- */
+/* --------------------------------
+   Sales Card
+-------------------------------- */
+
+function SalesCard({
+  label,
+  value,
+  loading,
+}: {
+  label: string;
+  value: number;
+  loading: boolean;
+}) {
+  return (
+    <section className="rounded-2xl border border-[var(--border-light)] bg-white p-5 shadow-sm sm:p-6">
+      <div className="flex items-center gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50">
+          <TrendingUp className="h-5 w-5 text-[var(--primary)]" />
+        </div>
+
+        <div>
+          <p className="text-xs font-medium text-[var(--text-muted)]">
+            {label}
+          </p>
+
+          <p className="mt-1 text-2xl font-bold text-[var(--dark)]">
+            {loading
+              ? "—"
+              : `Rs. ${value.toLocaleString("en-PK")}`}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* --------------------------------
+   Recent Order
+-------------------------------- */
 
 function RecentOrder({ order }: { order: Order }) {
   const statusStyles: Record<Order["status"], string> = {
-    pending:
-      "border-amber-200 bg-amber-50 text-amber-700",
-    confirmed:
-      "border-blue-200 bg-blue-50 text-blue-700",
-    delivered:
-      "border-green-200 bg-green-50 text-green-700",
-    cancelled:
-      "border-red-200 bg-red-50 text-red-700",
+    pending: "border-amber-200 bg-amber-50 text-amber-700",
+    confirmed: "border-blue-200 bg-blue-50 text-blue-700",
+    delivered: "border-green-200 bg-green-50 text-green-700",
+    cancelled: "border-red-200 bg-red-50 text-red-700",
   };
 
   return (

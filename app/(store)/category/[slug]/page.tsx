@@ -5,7 +5,9 @@ import { ChevronRight } from "lucide-react";
 import CategoryCatalog from "@/components/products/CategoryCatalog";
 import StoreLayout from "@/components/layout/StoreLayout";
 import { categories } from "@/data/categories";
-import { products } from "@/data/products";
+import { getStoreProducts } from "@/lib/serverProducts";
+
+export const dynamic = "force-dynamic";
 
 interface CategoryPageProps {
   params: Promise<{
@@ -25,6 +27,9 @@ export default async function CategoryPage({
   if (!category) {
     notFound();
   }
+
+  // Load existing products plus saved catalogue changes.
+  const products = await getStoreProducts();
 
   const categoryProducts = products.filter(
     (product) => product.categoryId === category.id,

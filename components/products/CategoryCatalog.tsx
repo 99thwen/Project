@@ -173,17 +173,42 @@ function FilterDropdown({
   );
 }
 
-function getPageNumbers(currentPage: number, totalPages: number): (number | "...")[] {
-  if (totalPages <= 4) {
-    return Array.from({ length: totalPages }, (_, index) => index + 1);
+function getPageNumbers(
+  currentPage: number,
+  totalPages: number,
+): (number | "...")[] {
+  if (totalPages <= 5) {
+    return Array.from(
+      { length: totalPages },
+      (_, index) => index + 1,
+    );
   }
-  if (currentPage <= 2) {
-    return [1, 2, 3, "...", totalPages];
+
+  const pages: (number | "...")[] = [1];
+
+  const start = currentPage <= 2
+    ? 2
+    : Math.max(2, currentPage - 1);
+
+  const end = currentPage <= 2
+    ? Math.min(totalPages - 1, 3)
+    : Math.min(totalPages - 1, currentPage + 1);
+
+  if (start > 2) {
+    pages.push("...");
   }
-  if (currentPage >= totalPages - 1) {
-    return [1, "...", totalPages - 2, totalPages - 1, totalPages];
+
+  for (let page = start; page <= end; page++) {
+    pages.push(page);
   }
-  return [1, "...", currentPage, "...", totalPages];
+
+  if (end < totalPages - 1) {
+    pages.push("...");
+  }
+
+  pages.push(totalPages);
+
+  return pages;
 }
 
 export default function CategoryCatalog({
@@ -196,13 +221,51 @@ export default function CategoryCatalog({
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const [selectedBrands, setSelectedBrands] = useState<string[]>(
-    initialBrand ? [initialBrand] : [],
+  const routeBrandSlug = pathname.startsWith("/brand/")
+  ? decodeURIComponent(pathname.split("/")[2] ?? "")
+  : "";
+const routeCategorySlug = pathname.startsWith("/category/")
+  ? decodeURIComponent(pathname.split("/")[2] ?? "")
+  : "";
 
+const requestedCategory = initialCategory || routeCategorySlug;
+
+const matchingCategory = categories.find(
+  (category) =>
+    category.id === requestedCategory ||
+    category.slug === requestedCategory,
+);
+
+const effectiveInitialCategory =
+  matchingCategory?.id ?? requestedCategory;
+
+
+const requestedBrand = initialBrand || routeBrandSlug;
+
+const matchingBrand = brands.find(
+  (brand) =>
+    brand.id === requestedBrand ||
+    brand.slug === requestedBrand,
+);
+
+const effectiveInitialBrand = matchingBrand?.id ?? "";
+
+const [selectedBrands, setSelectedBrands] = useState<string[]>(
+  effectiveInitialBrand ? [effectiveInitialBrand] : [],
+);
+
+useEffect(() => {
+  setSelectedBrands(
+    effectiveInitialBrand ? [effectiveInitialBrand] : [],
   );
+}, [effectiveInitialBrand]);
 
-  const [selectedCategory, setSelectedCategory] =
-    useState(initialCategory);
+ const [selectedCategory, setSelectedCategory] =
+  useState(effectiveInitialCategory);
+
+useEffect(() => {
+  setSelectedCategory(effectiveInitialCategory);
+}, [effectiveInitialCategory]);
 
   const [sortBy, setSortBy] =
     useState<SortOption>("featured");
@@ -214,56 +277,85 @@ export default function CategoryCatalog({
     useState<string | null>(null);
 
     const productGridRef = useRef<HTMLDivElement>(null);
+const [catalogProducts, setCatalogProducts] =
+  useState<Product[]>(products);
 
+useEffect(() => {
+  let cancelled = false;
+
+  async function loadCatalogue() {
+    try {
+      const response = await fetch("/api/products", {
+        cache: "no-store",
+      });
+
+      if (!response.ok) {
+        throw new Error("Could not load saved products.");
+      }
+
+      const data = (await response.json()) as {
+        products?: Product[];
+      };
+
+      if (!cancelled && Array.isArray(data.products)) {
+        setCatalogProducts(data.products);
+      }
+    } catch (error) {
+      console.error("Could not refresh storefront catalogue:", error);
+    }
+  }
+
+  void loadCatalogue();
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
   /* AVAILABLE BRANDS */
+const availableBrands = useMemo(() => {
+  const brandIds = new Set(
+    catalogProducts.map((product) => product.brandId),
+  );
 
-  const availableBrands = useMemo(() => {
-
-    const brandIds = new Set(
-
-      products.map((product) => product.brandId),
-
-    );
-
-    return brands.filter((brand) => brandIds.has(brand.id));
-
-  }, [products]);
-
+  return brands.filter((brand) => brandIds.has(brand.id));
+}, [catalogProducts]);
   /* AVAILABLE CATEGORIES */
 
-  const availableCategories = useMemo(() => {
+ const availableCategories = useMemo(() => {
+  const categoryIds = new Set(
+    catalogProducts.map((product) => product.categoryId),
+  );
 
-    const categoryIds = new Set(
-
-      products.map((product) => product.categoryId),
-
-    );
-
-    return categories.filter((category) =>
-
-      categoryIds.has(category.id),
-
-    );
-
-  }, [products]);
+  return categories.filter((category) =>
+    categoryIds.has(category.id),
+  );
+}, [catalogProducts]);
 
   /* FILTERED + SORTED PRODUCTS */
 
   const filteredProducts = useMemo(() => {
 
-    let result = products;
+   let result = catalogProducts;
 
-    if (selectedCategory) {
+  if (selectedCategory) {
+  const category = categories.find(
+    (item) =>
+      item.id === selectedCategory ||
+      item.slug === selectedCategory,
+  );
 
-      result = result.filter(
+  const categoryIdentifiers = new Set(
+    [
+      selectedCategory,
+      category?.id,
+      category?.slug,
+    ].filter((value): value is string => Boolean(value)),
+  );
 
-        (product) =>
-
-          product.categoryId === selectedCategory,
-
-      );
-
-    }
+  result = result.filter((product) =>
+    categoryIdentifiers.has(product.categoryId),
+  );
+}
 
     if (selectedBrands.length > 0) {
 

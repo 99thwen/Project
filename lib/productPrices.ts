@@ -1,5 +1,6 @@
 import {
   collection,
+  deleteDoc,
   doc,
   getDocs,
   onSnapshot,
@@ -19,7 +20,9 @@ export interface ProductPriceOverrides {
 }
 
 let overrides: ProductPriceOverrides = {};
+
 const serverSnapshot: ProductPriceOverrides = {};
+
 let unsubscribe: Unsubscribe | null = null;
 let initialized = false;
 
@@ -47,10 +50,15 @@ function startPriceListener() {
 
       overrides = nextOverrides;
       initialized = true;
+
       notifyListeners();
     },
     (error) => {
-      console.error("Failed to load product price overrides:", error);
+      console.error(
+        "Failed to load product price overrides:",
+        error,
+      );
+
       initialized = true;
       notifyListeners();
     },
@@ -102,6 +110,7 @@ export async function getProductPriceOverrides(): Promise<ProductPriceOverrides>
 
   overrides = nextOverrides;
   initialized = true;
+
   notifyListeners();
 
   return nextOverrides;
@@ -120,6 +129,35 @@ export async function saveProductPrice(
   await setDoc(productRef, {
     price,
   });
+
+  overrides = {
+    ...overrides,
+    [productId]: price,
+  };
+
+  initialized = true;
+  notifyListeners();
+}
+
+export async function deleteProductPriceOverride(
+  productId: string,
+): Promise<void> {
+  const productRef = doc(
+    db,
+    "productOverrides",
+    productId,
+  );
+
+  await deleteDoc(productRef);
+
+  const nextOverrides = { ...overrides };
+
+  delete nextOverrides[productId];
+
+  overrides = nextOverrides;
+  initialized = true;
+
+  notifyListeners();
 }
 
 export function areProductPricesInitialized(): boolean {
