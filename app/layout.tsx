@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import CartProvider from "@/components/cart/CartProvider";
 
 import "./globals.css";
@@ -110,6 +111,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.variable}>
         <CartProvider>{children}</CartProvider>
+          <Analytics />
+          <SpeedInsights />
       </body>
     </html>
   );
